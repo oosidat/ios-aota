@@ -24,6 +24,7 @@
 		16D21DD718FC8C1400D18092 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DD518FC8C1400D18092 /* InfoPlist.strings */; };
 		16D21DD918FC8C1400D18092 /* spaceinvadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */; };
 		16D21DE418FC902600D18092 /* SISpaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DE318FC902600D18092 /* SISpaceship.m */; };
+		8D7AA77B18FC965E00C341BD /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D7AA77A18FC965E00C341BD /* Spaceship.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spaceinvadersTests.m; sourceTree = "<group>"; };
 		16D21DE218FC902600D18092 /* SISpaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISpaceship.h; sourceTree = "<group>"; };
 		16D21DE318FC902600D18092 /* SISpaceship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISpaceship.m; sourceTree = "<group>"; };
+		8D7AA77A18FC965E00C341BD /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				16D21DD218FC8C1400D18092 /* spaceinvadersTests */,
 				16D21DA518FC8C1400D18092 /* Frameworks */,
 				16D21DA418FC8C1400D18092 /* Products */,
+				8D7AA77918FC965E00C341BD /* Assets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +167,14 @@
 				16D21DD518FC8C1400D18092 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8D7AA77918FC965E00C341BD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8D7AA77A18FC965E00C341BD /* Spaceship.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7AA77B18FC965E00C341BD /* Spaceship.png in Resources */,
 				16D21DB318FC8C1400D18092 /* InfoPlist.strings in Resources */,
 				16D21DC618FC8C1400D18092 /* Images.xcassets in Resources */,
 				16D21DBC18FC8C1400D18092 /* Main.storyboard in Resources */,
@@ -475,6 +487,7 @@
 				16D21DDE18FC8C1400D18092 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16D21DDF18FC8C1400D18092 /* Build configuration list for PBXNativeTarget "spaceinvadersTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +496,7 @@
 				16D21DE118FC8C1400D18092 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
