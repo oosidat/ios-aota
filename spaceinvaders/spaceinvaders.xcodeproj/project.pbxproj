@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16D21DA718FC8C1400D18092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DA618FC8C1400D18092 /* Foundation.framework */; };
+		16D21DA918FC8C1400D18092 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DA818FC8C1400D18092 /* CoreGraphics.framework */; };
+		16D21DAB18FC8C1400D18092 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DAA18FC8C1400D18092 /* UIKit.framework */; };
+		16D21DAD18FC8C1400D18092 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DAC18FC8C1400D18092 /* SpriteKit.framework */; };
+		16D21DB318FC8C1400D18092 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DB118FC8C1400D18092 /* InfoPlist.strings */; };
+		16D21DB518FC8C1400D18092 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DB418FC8C1400D18092 /* main.m */; };
+		16D21DB918FC8C1400D18092 /* SIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DB818FC8C1400D18092 /* SIAppDelegate.m */; };
+		16D21DBC18FC8C1400D18092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DBA18FC8C1400D18092 /* Main.storyboard */; };
+		16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DBE18FC8C1400D18092 /* SIViewController.m */; };
+		16D21DC218FC8C1400D18092 /* SIMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DC118FC8C1400D18092 /* SIMyScene.m */; };
+		16D21DC418FC8C1400D18092 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DC318FC8C1400D18092 /* Spaceship.png */; };
+		16D21DC618FC8C1400D18092 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DC518FC8C1400D18092 /* Images.xcassets */; };
+		16D21DCD18FC8C1400D18092 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DCC18FC8C1400D18092 /* XCTest.framework */; };
+		16D21DCE18FC8C1400D18092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DA618FC8C1400D18092 /* Foundation.framework */; };
+		16D21DCF18FC8C1400D18092 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DAA18FC8C1400D18092 /* UIKit.framework */; };
+		16D21DD718FC8C1400D18092 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DD518FC8C1400D18092 /* InfoPlist.strings */; };
+		16D21DD918FC8C1400D18092 /* spaceinvadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16D21DD018FC8C1400D18092 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16D21D9B18FC8C1400D18092 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16D21DA218FC8C1400D18092;
+			remoteInfo = spaceinvaders;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16D21DA318FC8C1400D18092 /* spaceinvaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spaceinvaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16D21DA618FC8C1400D18092 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		16D21DA818FC8C1400D18092 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		16D21DAA18FC8C1400D18092 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		16D21DAC18FC8C1400D18092 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		16D21DB018FC8C1400D18092 /* spaceinvaders-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spaceinvaders-Info.plist"; sourceTree = "<group>"; };
+		16D21DB218FC8C1400D18092 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		16D21DB418FC8C1400D18092 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		16D21DB618FC8C1400D18092 /* spaceinvaders-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "spaceinvaders-Prefix.pch"; sourceTree = "<group>"; };
+		16D21DB718FC8C1400D18092 /* SIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIAppDelegate.h; sourceTree = "<group>"; };
+		16D21DB818FC8C1400D18092 /* SIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIAppDelegate.m; sourceTree = "<group>"; };
+		16D21DBB18FC8C1400D18092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		16D21DBD18FC8C1400D18092 /* SIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIViewController.h; sourceTree = "<group>"; };
+		16D21DBE18FC8C1400D18092 /* SIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIViewController.m; sourceTree = "<group>"; };
+		16D21DC018FC8C1400D18092 /* SIMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIMyScene.h; sourceTree = "<group>"; };
+		16D21DC118FC8C1400D18092 /* SIMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIMyScene.m; sourceTree = "<group>"; };
+		16D21DC318FC8C1400D18092 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		16D21DC518FC8C1400D18092 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		16D21DCB18FC8C1400D18092 /* spaceinvadersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spaceinvadersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16D21DCC18FC8C1400D18092 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		16D21DD418FC8C1400D18092 /* spaceinvadersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spaceinvadersTests-Info.plist"; sourceTree = "<group>"; };
+		16D21DD618FC8C1400D18092 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spaceinvadersTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16D21DA018FC8C1400D18092 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D21DA918FC8C1400D18092 /* CoreGraphics.framework in Frameworks */,
+				16D21DAB18FC8C1400D18092 /* UIKit.framework in Frameworks */,
+				16D21DAD18FC8C1400D18092 /* SpriteKit.framework in Frameworks */,
+				16D21DA718FC8C1400D18092 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16D21DC818FC8C1400D18092 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D21DCD18FC8C1400D18092 /* XCTest.framework in Frameworks */,
+				16D21DCF18FC8C1400D18092 /* UIKit.framework in Frameworks */,
+				16D21DCE18FC8C1400D18092 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16D21D9A18FC8C1400D18092 = {
+			isa = PBXGroup;
+			children = (
+				16D21DAE18FC8C1400D18092 /* spaceinvaders */,
+				16D21DD218FC8C1400D18092 /* spaceinvadersTests */,
+				16D21DA518FC8C1400D18092 /* Frameworks */,
+				16D21DA418FC8C1400D18092 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		16D21DA418FC8C1400D18092 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16D21DA318FC8C1400D18092 /* spaceinvaders.app */,
+				16D21DCB18FC8C1400D18092 /* spaceinvadersTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16D21DA518FC8C1400D18092 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16D21DA618FC8C1400D18092 /* Foundation.framework */,
+				16D21DA818FC8C1400D18092 /* CoreGraphics.framework */,
+				16D21DAA18FC8C1400D18092 /* UIKit.framework */,
+				16D21DAC18FC8C1400D18092 /* SpriteKit.framework */,
+				16D21DCC18FC8C1400D18092 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16D21DAE18FC8C1400D18092 /* spaceinvaders */ = {
+			isa = PBXGroup;
+			children = (
+				16D21DB718FC8C1400D18092 /* SIAppDelegate.h */,
+				16D21DB818FC8C1400D18092 /* SIAppDelegate.m */,
+				16D21DBA18FC8C1400D18092 /* Main.storyboard */,
+				16D21DBD18FC8C1400D18092 /* SIViewController.h */,
+				16D21DBE18FC8C1400D18092 /* SIViewController.m */,
+				16D21DC018FC8C1400D18092 /* SIMyScene.h */,
+				16D21DC118FC8C1400D18092 /* SIMyScene.m */,
+				16D21DC318FC8C1400D18092 /* Spaceship.png */,
+				16D21DC518FC8C1400D18092 /* Images.xcassets */,
+				16D21DAF18FC8C1400D18092 /* Supporting Files */,
+			);
+			path = spaceinvaders;
+			sourceTree = "<group>";
+		};
+		16D21DAF18FC8C1400D18092 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				16D21DB018FC8C1400D18092 /* spaceinvaders-Info.plist */,
+				16D21DB118FC8C1400D18092 /* InfoPlist.strings */,
+				16D21DB418FC8C1400D18092 /* main.m */,
+				16D21DB618FC8C1400D18092 /* spaceinvaders-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16D21DD218FC8C1400D18092 /* spaceinvadersTests */ = {
+			isa = PBXGroup;
+			children = (
+				16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */,
+				16D21DD318FC8C1400D18092 /* Supporting Files */,
+			);
+			path = spaceinvadersTests;
+			sourceTree = "<group>";
+		};
+		16D21DD318FC8C1400D18092 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				16D21DD418FC8C1400D18092 /* spaceinvadersTests-Info.plist */,
+				16D21DD518FC8C1400D18092 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16D21DA218FC8C1400D18092 /* spaceinvaders */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16D21DDC18FC8C1400D18092 /* Build configuration list for PBXNativeTarget "spaceinvaders" */;
+			buildPhases = (
+				16D21D9F18FC8C1400D18092 /* Sources */,
+				16D21DA018FC8C1400D18092 /* Frameworks */,
+				16D21DA118FC8C1400D18092 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = spaceinvaders;
+			productName = spaceinvaders;
+			productReference = 16D21DA318FC8C1400D18092 /* spaceinvaders.app */;
+			productType = "com.apple.product-type.application";
+		};
+		16D21DCA18FC8C1400D18092 /* spaceinvadersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16D21DDF18FC8C1400D18092 /* Build configuration list for PBXNativeTarget "spaceinvadersTests" */;
+			buildPhases = (
+				16D21DC718FC8C1400D18092 /* Sources */,
+				16D21DC818FC8C1400D18092 /* Frameworks */,
+				16D21DC918FC8C1400D18092 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16D21DD118FC8C1400D18092 /* PBXTargetDependency */,
+			);
+			name = spaceinvadersTests;
+			productName = spaceinvadersTests;
+			productReference = 16D21DCB18FC8C1400D18092 /* spaceinvadersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16D21D9B18FC8C1400D18092 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SI;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "OsamaSidat-HenryChung";
+				TargetAttributes = {
+					16D21DCA18FC8C1400D18092 = {
+						TestTargetID = 16D21DA218FC8C1400D18092;
+					};
+				};
+			};
+			buildConfigurationList = 16D21D9E18FC8C1400D18092 /* Build configuration list for PBXProject "spaceinvaders" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 16D21D9A18FC8C1400D18092;
+			productRefGroup = 16D21DA418FC8C1400D18092 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16D21DA218FC8C1400D18092 /* spaceinvaders */,
+				16D21DCA18FC8C1400D18092 /* spaceinvadersTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16D21DA118FC8C1400D18092 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D21DB318FC8C1400D18092 /* InfoPlist.strings in Resources */,
+				16D21DC618FC8C1400D18092 /* Images.xcassets in Resources */,
+				16D21DC418FC8C1400D18092 /* Spaceship.png in Resources */,
+				16D21DBC18FC8C1400D18092 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16D21DC918FC8C1400D18092 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D21DD718FC8C1400D18092 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16D21D9F18FC8C1400D18092 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D21DB918FC8C1400D18092 /* SIAppDelegate.m in Sources */,
+				16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */,
+				16D21DC218FC8C1400D18092 /* SIMyScene.m in Sources */,
+				16D21DB518FC8C1400D18092 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16D21DC718FC8C1400D18092 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D21DD918FC8C1400D18092 /* spaceinvadersTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16D21DD118FC8C1400D18092 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16D21DA218FC8C1400D18092 /* spaceinvaders */;
+			targetProxy = 16D21DD018FC8C1400D18092 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		16D21DB118FC8C1400D18092 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16D21DB218FC8C1400D18092 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		16D21DBA18FC8C1400D18092 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16D21DBB18FC8C1400D18092 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		16D21DD518FC8C1400D18092 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16D21DD618FC8C1400D18092 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		16D21DDA18FC8C1400D18092 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		16D21DDB18FC8C1400D18092 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		16D21DDD18FC8C1400D18092 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "spaceinvaders/spaceinvaders-Prefix.pch";
+				INFOPLIST_FILE = "spaceinvaders/spaceinvaders-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		16D21DDE18FC8C1400D18092 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "spaceinvaders/spaceinvaders-Prefix.pch";
+				INFOPLIST_FILE = "spaceinvaders/spaceinvaders-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		16D21DE018FC8C1400D18092 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/spaceinvaders.app/spaceinvaders";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "spaceinvaders/spaceinvaders-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "spaceinvadersTests/spaceinvadersTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		16D21DE118FC8C1400D18092 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/spaceinvaders.app/spaceinvaders";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "spaceinvaders/spaceinvaders-Prefix.pch";
+				INFOPLIST_FILE = "spaceinvadersTests/spaceinvadersTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16D21D9E18FC8C1400D18092 /* Build configuration list for PBXProject "spaceinvaders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16D21DDA18FC8C1400D18092 /* Debug */,
+				16D21DDB18FC8C1400D18092 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16D21DDC18FC8C1400D18092 /* Build configuration list for PBXNativeTarget "spaceinvaders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16D21DDD18FC8C1400D18092 /* Debug */,
+				16D21DDE18FC8C1400D18092 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		16D21DDF18FC8C1400D18092 /* Build configuration list for PBXNativeTarget "spaceinvadersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16D21DE018FC8C1400D18092 /* Debug */,
+				16D21DE118FC8C1400D18092 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 16D21D9B18FC8C1400D18092 /* Project object */;
+}
