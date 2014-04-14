@@ -17,13 +17,13 @@
 		16D21DBC18FC8C1400D18092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DBA18FC8C1400D18092 /* Main.storyboard */; };
 		16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DBE18FC8C1400D18092 /* SIViewController.m */; };
 		16D21DC218FC8C1400D18092 /* SIGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DC118FC8C1400D18092 /* SIGameScene.m */; };
-		16D21DC418FC8C1400D18092 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DC318FC8C1400D18092 /* Spaceship.png */; };
 		16D21DC618FC8C1400D18092 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DC518FC8C1400D18092 /* Images.xcassets */; };
 		16D21DCD18FC8C1400D18092 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DCC18FC8C1400D18092 /* XCTest.framework */; };
 		16D21DCE18FC8C1400D18092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DA618FC8C1400D18092 /* Foundation.framework */; };
 		16D21DCF18FC8C1400D18092 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DAA18FC8C1400D18092 /* UIKit.framework */; };
 		16D21DD718FC8C1400D18092 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DD518FC8C1400D18092 /* InfoPlist.strings */; };
 		16D21DD918FC8C1400D18092 /* spaceinvadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */; };
+		16D21DE418FC902600D18092 /* SISpaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DE318FC902600D18092 /* SISpaceship.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +53,14 @@
 		16D21DBE18FC8C1400D18092 /* SIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIViewController.m; sourceTree = "<group>"; };
 		16D21DC018FC8C1400D18092 /* SIGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIGameScene.h; sourceTree = "<group>"; };
 		16D21DC118FC8C1400D18092 /* SIGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIGameScene.m; sourceTree = "<group>"; };
-		16D21DC318FC8C1400D18092 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		16D21DC518FC8C1400D18092 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16D21DCB18FC8C1400D18092 /* spaceinvadersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spaceinvadersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D21DCC18FC8C1400D18092 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		16D21DD418FC8C1400D18092 /* spaceinvadersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spaceinvadersTests-Info.plist"; sourceTree = "<group>"; };
 		16D21DD618FC8C1400D18092 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spaceinvadersTests.m; sourceTree = "<group>"; };
+		16D21DE218FC902600D18092 /* SISpaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISpaceship.h; sourceTree = "<group>"; };
+		16D21DE318FC902600D18092 /* SISpaceship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISpaceship.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +129,10 @@
 				16D21DBE18FC8C1400D18092 /* SIViewController.m */,
 				16D21DC018FC8C1400D18092 /* SIGameScene.h */,
 				16D21DC118FC8C1400D18092 /* SIGameScene.m */,
-				16D21DC318FC8C1400D18092 /* Spaceship.png */,
 				16D21DC518FC8C1400D18092 /* Images.xcassets */,
 				16D21DAF18FC8C1400D18092 /* Supporting Files */,
+				16D21DE218FC902600D18092 /* SISpaceship.h */,
+				16D21DE318FC902600D18092 /* SISpaceship.m */,
 			);
 			path = spaceinvaders;
 			sourceTree = "<group>";
@@ -243,7 +245,6 @@
 			files = (
 				16D21DB318FC8C1400D18092 /* InfoPlist.strings in Resources */,
 				16D21DC618FC8C1400D18092 /* Images.xcassets in Resources */,
-				16D21DC418FC8C1400D18092 /* Spaceship.png in Resources */,
 				16D21DBC18FC8C1400D18092 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +268,7 @@
 				16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */,
 				16D21DC218FC8C1400D18092 /* SIGameScene.m in Sources */,
 				16D21DB518FC8C1400D18092 /* main.m in Sources */,
+				16D21DE418FC902600D18092 /* SISpaceship.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

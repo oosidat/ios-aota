@@ -15,7 +15,7 @@
 {
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    if (!skView) {
+    if (skView) {
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
         

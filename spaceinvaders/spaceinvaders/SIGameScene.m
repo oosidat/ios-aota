@@ -7,6 +7,14 @@
 //
 
 #import "SIGameScene.h"
+#import "SISpaceship.h"
+
+@interface SIGameScene()
+
+@property (nonatomic) SISpaceship *spaceship;
+
+@end
+
 
 @implementation SIGameScene
 
@@ -14,35 +22,24 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        _spaceship = [[SISpaceship alloc] initWithImageNamed:@"Spaceship.png"];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        
-        [self addChild:myLabel];
     }
     return self;
+}
+
+- (void)didMoveToView:(SKView *)view {
+    
+    self.backgroundColor = [SKColor whiteColor];
+    self.spaceship.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+    [self addChild:self.spaceship];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
     for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
         
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
     }
 }
 
