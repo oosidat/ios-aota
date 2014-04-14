@@ -16,7 +16,7 @@
 		16D21DB918FC8C1400D18092 /* SIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DB818FC8C1400D18092 /* SIAppDelegate.m */; };
 		16D21DBC18FC8C1400D18092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DBA18FC8C1400D18092 /* Main.storyboard */; };
 		16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DBE18FC8C1400D18092 /* SIViewController.m */; };
-		16D21DC218FC8C1400D18092 /* SIMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DC118FC8C1400D18092 /* SIMyScene.m */; };
+		16D21DC218FC8C1400D18092 /* SIGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DC118FC8C1400D18092 /* SIGameScene.m */; };
 		16D21DC418FC8C1400D18092 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DC318FC8C1400D18092 /* Spaceship.png */; };
 		16D21DC618FC8C1400D18092 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DC518FC8C1400D18092 /* Images.xcassets */; };
 		16D21DCD18FC8C1400D18092 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DCC18FC8C1400D18092 /* XCTest.framework */; };
@@ -51,8 +51,8 @@
 		16D21DBB18FC8C1400D18092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16D21DBD18FC8C1400D18092 /* SIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIViewController.h; sourceTree = "<group>"; };
 		16D21DBE18FC8C1400D18092 /* SIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIViewController.m; sourceTree = "<group>"; };
-		16D21DC018FC8C1400D18092 /* SIMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIMyScene.h; sourceTree = "<group>"; };
-		16D21DC118FC8C1400D18092 /* SIMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIMyScene.m; sourceTree = "<group>"; };
+		16D21DC018FC8C1400D18092 /* SIGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIGameScene.h; sourceTree = "<group>"; };
+		16D21DC118FC8C1400D18092 /* SIGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIGameScene.m; sourceTree = "<group>"; };
 		16D21DC318FC8C1400D18092 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		16D21DC518FC8C1400D18092 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16D21DCB18FC8C1400D18092 /* spaceinvadersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spaceinvadersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,8 +126,8 @@
 				16D21DBA18FC8C1400D18092 /* Main.storyboard */,
 				16D21DBD18FC8C1400D18092 /* SIViewController.h */,
 				16D21DBE18FC8C1400D18092 /* SIViewController.m */,
-				16D21DC018FC8C1400D18092 /* SIMyScene.h */,
-				16D21DC118FC8C1400D18092 /* SIMyScene.m */,
+				16D21DC018FC8C1400D18092 /* SIGameScene.h */,
+				16D21DC118FC8C1400D18092 /* SIGameScene.m */,
 				16D21DC318FC8C1400D18092 /* Spaceship.png */,
 				16D21DC518FC8C1400D18092 /* Images.xcassets */,
 				16D21DAF18FC8C1400D18092 /* Supporting Files */,
@@ -265,7 +265,7 @@
 			files = (
 				16D21DB918FC8C1400D18092 /* SIAppDelegate.m in Sources */,
 				16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */,
-				16D21DC218FC8C1400D18092 /* SIMyScene.m in Sources */,
+				16D21DC218FC8C1400D18092 /* SIGameScene.m in Sources */,
 				16D21DB518FC8C1400D18092 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

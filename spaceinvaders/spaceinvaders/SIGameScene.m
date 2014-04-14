@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 OsamaSidat-HenryChung. All rights reserved.
 //
 
-#import "SIMyScene.h"
+#import "SIGameScene.h"
 
-@implementation SIMyScene
+@implementation SIGameScene
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
