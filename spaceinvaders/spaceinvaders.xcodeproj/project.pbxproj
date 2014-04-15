@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16AFA61018FCD823000FF358 /* Monster.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AFA60E18FCD823000FF358 /* Monster.png */; };
+		16AFA61118FCD823000FF358 /* Rocket.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AFA60F18FCD823000FF358 /* Rocket.png */; };
 		16D21DA718FC8C1400D18092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DA618FC8C1400D18092 /* Foundation.framework */; };
 		16D21DA918FC8C1400D18092 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DA818FC8C1400D18092 /* CoreGraphics.framework */; };
 		16D21DAB18FC8C1400D18092 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DAA18FC8C1400D18092 /* UIKit.framework */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16AFA60E18FCD823000FF358 /* Monster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Monster.png; sourceTree = "<group>"; };
+		16AFA60F18FCD823000FF358 /* Rocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket.png; sourceTree = "<group>"; };
 		16D21DA318FC8C1400D18092 /* spaceinvaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spaceinvaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D21DA618FC8C1400D18092 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		16D21DA818FC8C1400D18092 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -172,6 +176,8 @@
 		8D7AA77918FC965E00C341BD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				16AFA60E18FCD823000FF358 /* Monster.png */,
+				16AFA60F18FCD823000FF358 /* Rocket.png */,
 				8D7AA77A18FC965E00C341BD /* Spaceship.png */,
 			);
 			path = Assets;
@@ -255,8 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D7AA77B18FC965E00C341BD /* Spaceship.png in Resources */,
+				16AFA61118FCD823000FF358 /* Rocket.png in Resources */,
 				16D21DB318FC8C1400D18092 /* InfoPlist.strings in Resources */,
 				16D21DC618FC8C1400D18092 /* Images.xcassets in Resources */,
+				16AFA61018FCD823000FF358 /* Monster.png in Resources */,
 				16D21DBC18FC8C1400D18092 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
