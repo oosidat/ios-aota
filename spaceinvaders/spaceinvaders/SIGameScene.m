@@ -32,7 +32,10 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    self.spaceship.position = CGPointMake(self.frame.size.width/2, self.spaceship.position.y + 5);
+    
     for (UITouch *touch in touches) {
+        
         
     }
 }
