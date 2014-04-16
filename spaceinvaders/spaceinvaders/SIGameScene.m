@@ -20,22 +20,19 @@
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
-        _spaceship = [[SISpaceship alloc] initWithImageNamed:@"Spaceship.png"];
+        _spaceship = [[SISpaceship alloc] initWithImageNamed:@"Spaceship32.png"];
     }
     return self;
 }
 
 - (void)didMoveToView:(SKView *)view {
     self.backgroundColor = [SKColor whiteColor];
-    self.spaceship.size = CGSizeMake(self.frame.size.width*0.1, self.frame.size.width*0.1);
     self.spaceship.position = CGPointMake(self.frame.size.width/2, self.spaceship.size.height);
     [self addChild:self.spaceship];
 }
 
 - (void)addAndroid {
-    SKSpriteNode * android = [SKSpriteNode spriteNodeWithImageNamed:@"Monster.png"];
-    
-    android.size = CGSizeMake(0.1*self.frame.size.width, 0.1*self.frame.size.width);
+    SKSpriteNode * android = [SKSpriteNode spriteNodeWithImageNamed:@"Monster32.png"];
     
     int androidWidth = android.size.width;
     int minX = androidWidth;
