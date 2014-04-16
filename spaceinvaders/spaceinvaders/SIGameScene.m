@@ -54,12 +54,24 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    self.spaceship.position = CGPointMake(self.frame.size.width/2, self.spaceship.position.y + 5);
+    float rocketRange = 1000;
+    float velocityK = 300.0;
     
-    for (UITouch *touch in touches) {
-        
-        
-    }
+    //UITouch * touch = [touches anyObject];
+    SKSpriteNode * rocket = [SKSpriteNode spriteNodeWithImageNamed:@"Rocket32.png"];
+    rocket.position = CGPointMake(self.spaceship.position.x, self.spaceship.position.y + self.spaceship.size.height/2);
+    
+    [self addChild:rocket];
+    
+    float velocity = velocityK / 1.0;
+    float realMoveDuration = self.size.width / velocity;
+    
+    CGPoint rocketDest = CGPointMake(rocket.position.x, rocketRange);
+    
+    SKAction * actionMove = [SKAction moveTo:rocketDest duration:realMoveDuration];
+    SKAction * actionMoveDone = [SKAction removeFromParent];
+    [rocket runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
+    
 }
 
 -(void)update:(CFTimeInterval)currentTime {
