@@ -22,7 +22,6 @@
 		16D21DB918FC8C1400D18092 /* SIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DB818FC8C1400D18092 /* SIAppDelegate.m */; };
 		16D21DBC18FC8C1400D18092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DBA18FC8C1400D18092 /* Main.storyboard */; };
 		16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DBE18FC8C1400D18092 /* SIViewController.m */; };
-		16D21DC218FC8C1400D18092 /* SIGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DC118FC8C1400D18092 /* SIGameScene.m */; };
 		16D21DC618FC8C1400D18092 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DC518FC8C1400D18092 /* Images.xcassets */; };
 		16D21DCD18FC8C1400D18092 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DCC18FC8C1400D18092 /* XCTest.framework */; };
 		16D21DCE18FC8C1400D18092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D21DA618FC8C1400D18092 /* Foundation.framework */; };
@@ -30,8 +29,10 @@
 		16D21DD718FC8C1400D18092 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DD518FC8C1400D18092 /* InfoPlist.strings */; };
 		16D21DD918FC8C1400D18092 /* spaceinvadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */; };
 		16D21DE418FC902600D18092 /* SISpaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DE318FC902600D18092 /* SISpaceship.m */; };
+		8D84F0671901A7B100DE42C0 /* SIMainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D84F0661901A7B100DE42C0 /* SIMainMenuScene.m */; };
+		8D84F06C1901A7E200DE42C0 /* SIGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D84F0691901A7E200DE42C0 /* SIGameScene.m */; };
+		8D84F06D1901A7E200DE42C0 /* SIGameScene+collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D84F06B1901A7E200DE42C0 /* SIGameScene+collision.m */; };
 		8D9B302C1900CBD500658688 /* SIRandomGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B302B1900CBD500658688 /* SIRandomGenerator.m */; };
-		8D9B302F1901A06C00658688 /* SIGameScene+collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B302E1901A06C00658688 /* SIGameScene+collision.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +66,6 @@
 		16D21DBB18FC8C1400D18092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16D21DBD18FC8C1400D18092 /* SIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIViewController.h; sourceTree = "<group>"; };
 		16D21DBE18FC8C1400D18092 /* SIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIViewController.m; sourceTree = "<group>"; };
-		16D21DC018FC8C1400D18092 /* SIGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIGameScene.h; sourceTree = "<group>"; };
-		16D21DC118FC8C1400D18092 /* SIGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIGameScene.m; sourceTree = "<group>"; };
 		16D21DC518FC8C1400D18092 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16D21DCB18FC8C1400D18092 /* spaceinvadersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spaceinvadersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D21DCC18FC8C1400D18092 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -75,10 +74,14 @@
 		16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spaceinvadersTests.m; sourceTree = "<group>"; };
 		16D21DE218FC902600D18092 /* SISpaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISpaceship.h; sourceTree = "<group>"; };
 		16D21DE318FC902600D18092 /* SISpaceship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISpaceship.m; sourceTree = "<group>"; };
+		8D84F0651901A7B100DE42C0 /* SIMainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIMainMenuScene.h; path = scenes/main_menu/SIMainMenuScene.h; sourceTree = "<group>"; };
+		8D84F0661901A7B100DE42C0 /* SIMainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIMainMenuScene.m; path = scenes/main_menu/SIMainMenuScene.m; sourceTree = "<group>"; };
+		8D84F0681901A7E200DE42C0 /* SIGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIGameScene.h; path = scenes/main_game/SIGameScene.h; sourceTree = "<group>"; };
+		8D84F0691901A7E200DE42C0 /* SIGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIGameScene.m; path = scenes/main_game/SIGameScene.m; sourceTree = "<group>"; };
+		8D84F06A1901A7E200DE42C0 /* SIGameScene+collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SIGameScene+collision.h"; path = "scenes/main_game/SIGameScene+collision.h"; sourceTree = "<group>"; };
+		8D84F06B1901A7E200DE42C0 /* SIGameScene+collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SIGameScene+collision.m"; path = "scenes/main_game/SIGameScene+collision.m"; sourceTree = "<group>"; };
 		8D9B302A1900CBD500658688 /* SIRandomGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIRandomGenerator.h; path = framework/SIRandomGenerator.h; sourceTree = "<group>"; };
 		8D9B302B1900CBD500658688 /* SIRandomGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIRandomGenerator.m; path = framework/SIRandomGenerator.m; sourceTree = "<group>"; };
-		8D9B302D1901A06C00658688 /* SIGameScene+collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SIGameScene+collision.h"; sourceTree = "<group>"; };
-		8D9B302E1901A06C00658688 /* SIGameScene+collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SIGameScene+collision.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,20 +164,17 @@
 		16D21DAE18FC8C1400D18092 /* spaceinvaders */ = {
 			isa = PBXGroup;
 			children = (
+				8D84F0621901A74000DE42C0 /* scenes */,
 				8D9B30291900CB7200658688 /* framework */,
 				16D21DB718FC8C1400D18092 /* SIAppDelegate.h */,
 				16D21DB818FC8C1400D18092 /* SIAppDelegate.m */,
 				16D21DBA18FC8C1400D18092 /* Main.storyboard */,
 				16D21DBD18FC8C1400D18092 /* SIViewController.h */,
 				16D21DBE18FC8C1400D18092 /* SIViewController.m */,
-				16D21DC018FC8C1400D18092 /* SIGameScene.h */,
-				16D21DC118FC8C1400D18092 /* SIGameScene.m */,
 				16D21DC518FC8C1400D18092 /* Images.xcassets */,
 				16D21DAF18FC8C1400D18092 /* Supporting Files */,
 				16D21DE218FC902600D18092 /* SISpaceship.h */,
 				16D21DE318FC902600D18092 /* SISpaceship.m */,
-				8D9B302D1901A06C00658688 /* SIGameScene+collision.h */,
-				8D9B302E1901A06C00658688 /* SIGameScene+collision.m */,
 			);
 			path = spaceinvaders;
 			sourceTree = "<group>";
@@ -215,6 +215,35 @@
 				1673CBCD18FE59A800D38AA2 /* original */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		8D84F0621901A74000DE42C0 /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8D84F0641901A75B00DE42C0 /* main_menu */,
+				8D84F0631901A74A00DE42C0 /* main_game */,
+			);
+			name = scenes;
+			sourceTree = "<group>";
+		};
+		8D84F0631901A74A00DE42C0 /* main_game */ = {
+			isa = PBXGroup;
+			children = (
+				8D84F0681901A7E200DE42C0 /* SIGameScene.h */,
+				8D84F0691901A7E200DE42C0 /* SIGameScene.m */,
+				8D84F06A1901A7E200DE42C0 /* SIGameScene+collision.h */,
+				8D84F06B1901A7E200DE42C0 /* SIGameScene+collision.m */,
+			);
+			name = main_game;
+			sourceTree = "<group>";
+		};
+		8D84F0641901A75B00DE42C0 /* main_menu */ = {
+			isa = PBXGroup;
+			children = (
+				8D84F0651901A7B100DE42C0 /* SIMainMenuScene.h */,
+				8D84F0661901A7B100DE42C0 /* SIMainMenuScene.m */,
+			);
+			name = main_menu;
 			sourceTree = "<group>";
 		};
 		8D9B30291900CB7200658688 /* framework */ = {
@@ -330,11 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D84F0671901A7B100DE42C0 /* SIMainMenuScene.m in Sources */,
 				16D21DB918FC8C1400D18092 /* SIAppDelegate.m in Sources */,
 				16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */,
-				16D21DC218FC8C1400D18092 /* SIGameScene.m in Sources */,
+				8D84F06C1901A7E200DE42C0 /* SIGameScene.m in Sources */,
 				16D21DB518FC8C1400D18092 /* main.m in Sources */,
-				8D9B302F1901A06C00658688 /* SIGameScene+collision.m in Sources */,
+				8D84F06D1901A7E200DE42C0 /* SIGameScene+collision.m in Sources */,
 				8D9B302C1900CBD500658688 /* SIRandomGenerator.m in Sources */,
 				16D21DE418FC902600D18092 /* SISpaceship.m in Sources */,
 			);

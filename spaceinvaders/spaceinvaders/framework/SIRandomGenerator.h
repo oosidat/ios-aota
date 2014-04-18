@@ -12,4 +12,5 @@
 
 + (NSInteger)randomIntegerFrom:(NSInteger)lower to:(NSInteger)upper;
 + (NSTimeInterval)randomTimeIntervalFrom:(NSTimeInterval)lower to:(NSTimeInterval)upper;
+
 @end
