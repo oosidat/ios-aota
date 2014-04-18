@@ -9,6 +9,7 @@
 #import "SIGameScene.h"
 #import "SISpaceship.h"
 #import "SIRandomGenerator.h"
+#import "SIGameScene+collision.h"
 
 #define kRocketRange 1000.0
 #define kVelocity 300.0
@@ -38,6 +39,8 @@
     self.backgroundColor = [SKColor whiteColor];
     self.spaceship.position = CGPointMake(self.frame.size.width/2, self.spaceship.size.height);
     [self addChild:self.spaceship];
+    
+    [self configurePhysics];
 }
 
 - (void)addAndroid:(NSTimeInterval)timeSinceLastUpdate {
@@ -64,6 +67,8 @@
     SKAction *actionMove = [SKAction moveTo:CGPointMake(actualX, -androidHeight) duration:duration];
     SKAction *actionMoveDone = [SKAction removeFromParent];
     [android runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
+    
+    [SIGameScene prepareCollisionForMonster:android];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -81,6 +86,7 @@
     SKAction *actionMoveDone = [SKAction removeFromParent];
     [rocket runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
     
+    [SIGameScene prepareCollisionForRocket:rocket];
 }
 
 -(void)update:(CFTimeInterval)currentTime {

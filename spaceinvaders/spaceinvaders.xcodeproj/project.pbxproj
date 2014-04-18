@@ -31,6 +31,7 @@
 		16D21DD918FC8C1400D18092 /* spaceinvadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */; };
 		16D21DE418FC902600D18092 /* SISpaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DE318FC902600D18092 /* SISpaceship.m */; };
 		8D9B302C1900CBD500658688 /* SIRandomGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B302B1900CBD500658688 /* SIRandomGenerator.m */; };
+		8D9B302F1901A06C00658688 /* SIGameScene+collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B302E1901A06C00658688 /* SIGameScene+collision.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		16D21DE318FC902600D18092 /* SISpaceship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISpaceship.m; sourceTree = "<group>"; };
 		8D9B302A1900CBD500658688 /* SIRandomGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIRandomGenerator.h; path = framework/SIRandomGenerator.h; sourceTree = "<group>"; };
 		8D9B302B1900CBD500658688 /* SIRandomGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIRandomGenerator.m; path = framework/SIRandomGenerator.m; sourceTree = "<group>"; };
+		8D9B302D1901A06C00658688 /* SIGameScene+collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SIGameScene+collision.h"; sourceTree = "<group>"; };
+		8D9B302E1901A06C00658688 /* SIGameScene+collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SIGameScene+collision.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				16D21DAF18FC8C1400D18092 /* Supporting Files */,
 				16D21DE218FC902600D18092 /* SISpaceship.h */,
 				16D21DE318FC902600D18092 /* SISpaceship.m */,
+				8D9B302D1901A06C00658688 /* SIGameScene+collision.h */,
+				8D9B302E1901A06C00658688 /* SIGameScene+collision.m */,
 			);
 			path = spaceinvaders;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */,
 				16D21DC218FC8C1400D18092 /* SIGameScene.m in Sources */,
 				16D21DB518FC8C1400D18092 /* main.m in Sources */,
+				8D9B302F1901A06C00658688 /* SIGameScene+collision.m in Sources */,
 				8D9B302C1900CBD500658688 /* SIRandomGenerator.m in Sources */,
 				16D21DE418FC902600D18092 /* SISpaceship.m in Sources */,
 			);
