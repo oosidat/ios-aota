@@ -18,11 +18,10 @@
 @property (nonatomic) SISpaceship *spaceship;
 @property (nonatomic) SKTexture *monsterTexture;
 @property (nonatomic) SKTexture *rocketTexture;
-@property (nonatomic) NSTimeInterval timeSinceLastMonsterSpawned;
+@property (nonatomic) NSTimeInterval timeUntilMonsterSpawn;
 @property (nonatomic) NSTimeInterval timeLastUpdate;
 
 @end
-
 
 @implementation SIGameScene
 
@@ -42,11 +41,11 @@
 }
 
 - (void)addAndroid:(NSTimeInterval)timeSinceLastUpdate {
-    self.timeSinceLastMonsterSpawned += timeSinceLastUpdate;
-    if(self.timeSinceLastMonsterSpawned < 0.5) {
+    self.timeUntilMonsterSpawn -= timeSinceLastUpdate;
+    if(self.timeUntilMonsterSpawn > 0) {
         return;
     }
-    self.timeSinceLastMonsterSpawned -= 0.5;
+    self.timeUntilMonsterSpawn += [SIRandomGenerator randomTimeIntervalFrom:0.5 to:1.0];
     
     SKSpriteNode *android = [SKSpriteNode spriteNodeWithTexture:self.monsterTexture];
     
