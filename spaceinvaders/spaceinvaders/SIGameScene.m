@@ -8,6 +8,7 @@
 
 #import "SIGameScene.h"
 #import "SISpaceship.h"
+#import "SIRandomGenerator.h"
 
 #define kRocketRange 1000.0
 #define kVelocity 300.0
@@ -50,20 +51,18 @@
     SKSpriteNode *android = [SKSpriteNode spriteNodeWithTexture:self.monsterTexture];
     
     NSInteger androidWidth = android.size.width;
+    NSInteger androidHeight = android.size.height;
+    
     NSInteger minX = androidWidth;
     NSInteger maxX = self.frame.size.width - androidWidth;
-    NSInteger rangeX = maxX - minX;
-    NSInteger actualX = (arc4random() % rangeX) + androidWidth;
+    NSInteger actualX = [SIRandomGenerator randomIntegerFrom:minX to:maxX];
     
     android.position = CGPointMake(actualX, self.frame.size.height);
     [self addChild:android];
     
-    NSInteger minDuration = 0.5;
-    NSInteger maxDuration = 3.0;
-    NSInteger rangeDuration = maxDuration - minDuration;
-    NSInteger actualDuration = (arc4random() % rangeDuration) + minDuration;
+    NSTimeInterval duration = [SIRandomGenerator randomTimeIntervalFrom:0.5 to:3.0];
     
-    SKAction *actionMove = [SKAction moveTo:CGPointMake(actualX, -androidWidth) duration:actualDuration];
+    SKAction *actionMove = [SKAction moveTo:CGPointMake(actualX, -androidHeight) duration:duration];
     SKAction *actionMoveDone = [SKAction removeFromParent];
     [android runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
 }

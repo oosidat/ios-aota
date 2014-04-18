@@ -30,6 +30,7 @@
 		16D21DD718FC8C1400D18092 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16D21DD518FC8C1400D18092 /* InfoPlist.strings */; };
 		16D21DD918FC8C1400D18092 /* spaceinvadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */; };
 		16D21DE418FC902600D18092 /* SISpaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D21DE318FC902600D18092 /* SISpaceship.m */; };
+		8D9B302C1900CBD500658688 /* SIRandomGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B302B1900CBD500658688 /* SIRandomGenerator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		16D21DD818FC8C1400D18092 /* spaceinvadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spaceinvadersTests.m; sourceTree = "<group>"; };
 		16D21DE218FC902600D18092 /* SISpaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISpaceship.h; sourceTree = "<group>"; };
 		16D21DE318FC902600D18092 /* SISpaceship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISpaceship.m; sourceTree = "<group>"; };
+		8D9B302A1900CBD500658688 /* SIRandomGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIRandomGenerator.h; path = framework/SIRandomGenerator.h; sourceTree = "<group>"; };
+		8D9B302B1900CBD500658688 /* SIRandomGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIRandomGenerator.m; path = framework/SIRandomGenerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,7 @@
 		16D21DAE18FC8C1400D18092 /* spaceinvaders */ = {
 			isa = PBXGroup;
 			children = (
+				8D9B30291900CB7200658688 /* framework */,
 				16D21DB718FC8C1400D18092 /* SIAppDelegate.h */,
 				16D21DB818FC8C1400D18092 /* SIAppDelegate.m */,
 				16D21DBA18FC8C1400D18092 /* Main.storyboard */,
@@ -206,6 +210,15 @@
 				1673CBCD18FE59A800D38AA2 /* original */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		8D9B30291900CB7200658688 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				8D9B302A1900CBD500658688 /* SIRandomGenerator.h */,
+				8D9B302B1900CBD500658688 /* SIRandomGenerator.m */,
+			);
+			name = framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +329,7 @@
 				16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */,
 				16D21DC218FC8C1400D18092 /* SIGameScene.m in Sources */,
 				16D21DB518FC8C1400D18092 /* main.m in Sources */,
+				8D9B302C1900CBD500658688 /* SIRandomGenerator.m in Sources */,
 				16D21DE418FC902600D18092 /* SISpaceship.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
