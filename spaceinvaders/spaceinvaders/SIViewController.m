@@ -7,7 +7,7 @@
 //
 
 #import "SIViewController.h"
-#import "SIGameScene.h"
+#import "SIMainMenuScene.h"
 
 @implementation SIViewController
 
@@ -19,11 +19,9 @@
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
         
-        // Create and configure the scene.
-        SKScene * scene = [SIGameScene sceneWithSize:CGSizeMake(320, 480)];
+        SKScene * scene = [SIMainMenuScene sceneWithSize:CGSizeMake(320, 480)];
         scene.scaleMode = SKSceneScaleModeAspectFit;
-        
-        // Present the scene.
+
         [skView presentScene:scene];
     }
 }

@@ -32,6 +32,7 @@
 		8D84F0671901A7B100DE42C0 /* SIMainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D84F0661901A7B100DE42C0 /* SIMainMenuScene.m */; };
 		8D84F06C1901A7E200DE42C0 /* SIGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D84F0691901A7E200DE42C0 /* SIGameScene.m */; };
 		8D84F06D1901A7E200DE42C0 /* SIGameScene+collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D84F06B1901A7E200DE42C0 /* SIGameScene+collision.m */; };
+		8D84F0701901FEB800DE42C0 /* HCSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D84F06F1901FEB800DE42C0 /* HCSpriteNode.m */; };
 		8D9B302C1900CBD500658688 /* SIRandomGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B302B1900CBD500658688 /* SIRandomGenerator.m */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,8 @@
 		8D84F0691901A7E200DE42C0 /* SIGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIGameScene.m; path = scenes/main_game/SIGameScene.m; sourceTree = "<group>"; };
 		8D84F06A1901A7E200DE42C0 /* SIGameScene+collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SIGameScene+collision.h"; path = "scenes/main_game/SIGameScene+collision.h"; sourceTree = "<group>"; };
 		8D84F06B1901A7E200DE42C0 /* SIGameScene+collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SIGameScene+collision.m"; path = "scenes/main_game/SIGameScene+collision.m"; sourceTree = "<group>"; };
+		8D84F06E1901FEB800DE42C0 /* HCSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HCSpriteNode.h; path = framework/HCSpriteNode.h; sourceTree = "<group>"; };
+		8D84F06F1901FEB800DE42C0 /* HCSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HCSpriteNode.m; path = framework/HCSpriteNode.m; sourceTree = "<group>"; };
 		8D9B302A1900CBD500658688 /* SIRandomGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIRandomGenerator.h; path = framework/SIRandomGenerator.h; sourceTree = "<group>"; };
 		8D9B302B1900CBD500658688 /* SIRandomGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIRandomGenerator.m; path = framework/SIRandomGenerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,6 +252,8 @@
 		8D9B30291900CB7200658688 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				8D84F06E1901FEB800DE42C0 /* HCSpriteNode.h */,
+				8D84F06F1901FEB800DE42C0 /* HCSpriteNode.m */,
 				8D9B302A1900CBD500658688 /* SIRandomGenerator.h */,
 				8D9B302B1900CBD500658688 /* SIRandomGenerator.m */,
 			);
@@ -367,6 +372,7 @@
 				8D84F06D1901A7E200DE42C0 /* SIGameScene+collision.m in Sources */,
 				8D9B302C1900CBD500658688 /* SIRandomGenerator.m in Sources */,
 				16D21DE418FC902600D18092 /* SISpaceship.m in Sources */,
+				8D84F0701901FEB800DE42C0 /* HCSpriteNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
