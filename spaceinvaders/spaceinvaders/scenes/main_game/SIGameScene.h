@@ -10,4 +10,6 @@
 
 @interface SIGameScene : SKScene
 
+-(void)addToScore:(NSUInteger)points;
+
 @end

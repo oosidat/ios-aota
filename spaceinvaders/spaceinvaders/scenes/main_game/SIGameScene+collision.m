@@ -7,6 +7,7 @@
 //
 
 #import "SIGameScene+collision.h"
+#import "SIGameScene.h"
 
 NS_ENUM(u_int32_t, SICollisionCategory) {
     SICollisionMonsterCategory,
@@ -52,6 +53,8 @@ NS_ENUM(u_int32_t, SICollisionCategory) {
         NSLog(@"Collision!");
         [bodyA.node removeFromParent];
         [bodyB.node removeFromParent];
+        
+        [self addToScore:1];
     }
 }
 
