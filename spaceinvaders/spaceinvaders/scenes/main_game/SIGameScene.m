@@ -13,6 +13,7 @@
 
 #define kRocketRange 1000.0
 #define kVelocity 300.0
+#define kScoreDisplayName @"scoreDisplay"
 
 @interface SIGameScene()
 
@@ -21,6 +22,7 @@
 @property (nonatomic) SKTexture *rocketTexture;
 @property (nonatomic) NSTimeInterval timeUntilMonsterSpawn;
 @property (nonatomic) NSTimeInterval timeLastUpdate;
+@property NSUInteger score;
 
 @end
 
@@ -32,7 +34,19 @@
         _monsterTexture = [SKTexture textureWithImageNamed:@"Monster32.png"];
         _rocketTexture = [SKTexture textureWithImageNamed:@"Rocket32.png"];
     }
+    [self setupDisplay];
     return self;
+}
+
+-(void)setupDisplay {
+    SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
+    scoreLabel.name = kScoreDisplayName;
+    scoreLabel.fontSize = 12;
+    scoreLabel.fontColor = [SKColor blueColor];
+    scoreLabel.text = [NSString stringWithFormat:@"Androids Destroyed: %04u", 0];
+    scoreLabel.position = CGPointMake(15 + scoreLabel.frame.size.width/2, self.size.height - (15 + scoreLabel.frame.size.height/2));
+    
+    [self addChild:scoreLabel];
 }
 
 - (void)didMoveToView:(SKView *)view {
@@ -87,6 +101,12 @@
     [rocket runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
     
     [SIGameScene prepareCollisionForRocket:rocket];
+}
+
+-(void)addToScore:(NSUInteger)points {
+    self.score += points;
+    SKLabelNode *score = (SKLabelNode*)[self childNodeWithName:kScoreDisplayName];
+    score.text = [NSString stringWithFormat: @"Androids Destroyed: %04lu", (unsigned long)self.score];
 }
 
 -(void)update:(CFTimeInterval)currentTime {
