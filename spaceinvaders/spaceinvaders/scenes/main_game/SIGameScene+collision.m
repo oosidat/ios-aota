@@ -49,10 +49,20 @@ NS_ENUM(u_int32_t, SICollisionCategory) {
     SKPhysicsBody *bodyA = contact.bodyA;
     SKPhysicsBody *bodyB = contact.bodyB;
     
+    SKAction *fadeAway = [SKAction fadeOutWithDuration:0.1];
+    SKAction *removeNode = [SKAction removeFromParent];
+    SKAction *sequence = [SKAction sequence:@[fadeAway, removeNode]];
+    
     if(bodyA.categoryBitMask == bodyB.contactTestBitMask && bodyB.categoryBitMask == bodyA.contactTestBitMask) {
         NSLog(@"Collision!");
-        [bodyA.node removeFromParent];
-        [bodyB.node removeFromParent];
+        if(bodyA.categoryBitMask == SICollisionMonsterCategory) {
+            [bodyA.node runAction:sequence];
+            [bodyB.node removeFromParent];
+        } else {
+            [bodyA.node removeFromParent];
+            [bodyB.node runAction:sequence];
+        }
+        
         
         [self addToScore:1];
     }
