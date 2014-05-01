@@ -17,3 +17,4 @@
 
 #import "HCSpriteNode.h"
 #import "SIRandomGenerator.h"
+#import "SKNode+si_collision_animation.h"
