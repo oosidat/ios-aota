@@ -15,5 +15,6 @@ Feature tracking:
 - [ ] Implement Game Over scenario and screen
 - [ ] !BONUS: Add new weapon
 - [ ] !BONUS: Add variation in Android power/behaviour
+- [ ] Handle calls to the app delegate
 
 *: Feature is implemented in a basic form, requires polish before first release.
