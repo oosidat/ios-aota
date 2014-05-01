@@ -11,7 +11,7 @@ Feature tracking:
 - [x*] Implement collision with androids and rockets
 - [ ] Implement x-axis movement using accelerometer
 - [x*] Create start page
-- [x*] Implement scoring
+- [x] Implement scoring
 - [ ] Implement Game Over scenario and screen
 - [ ] !BONUS: Add new weapon
 - [ ] !BONUS: Add variation in Android power/behaviour
