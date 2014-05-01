@@ -8,7 +8,6 @@
 
 #import "SIGameScene.h"
 #import "SISpaceship.h"
-#import "SIRandomGenerator.h"
 #import "SIGameScene+collision.h"
 
 #define kRocketRange 1000.0

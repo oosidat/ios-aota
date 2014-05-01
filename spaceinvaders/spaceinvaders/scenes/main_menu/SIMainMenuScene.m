@@ -8,7 +8,6 @@
 
 #import "SIMainMenuScene.h"
 #import "SIGameScene.h"
-#import "HCSpriteNode.h"
 
 @interface SIMainMenuScene()
 
