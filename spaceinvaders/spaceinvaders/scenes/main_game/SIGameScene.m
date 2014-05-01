@@ -13,7 +13,6 @@
 
 #define kRocketRange 1000.0
 #define kVelocity 300.0
-#define kScoreDisplayName @"scoreDisplay"
 
 @interface SIGameScene()
 
@@ -22,6 +21,8 @@
 @property (nonatomic) SKTexture *rocketTexture;
 @property (nonatomic) NSTimeInterval timeUntilMonsterSpawn;
 @property (nonatomic) NSTimeInterval timeLastUpdate;
+
+@property (nonatomic) SKLabelNode *scoreLabel;
 @property NSUInteger score;
 
 @end
@@ -33,26 +34,26 @@
         _spaceship = [[SISpaceship alloc] initWithImageNamed:@"Spaceship32.png"];
         _monsterTexture = [SKTexture textureWithImageNamed:@"Monster32.png"];
         _rocketTexture = [SKTexture textureWithImageNamed:@"Rocket32.png"];
+        _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
     }
-    [self setupDisplay];
     return self;
 }
 
 -(void)setupDisplay {
-    SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
-    scoreLabel.name = kScoreDisplayName;
-    scoreLabel.fontSize = 12;
-    scoreLabel.fontColor = [SKColor blueColor];
-    scoreLabel.text = [NSString stringWithFormat:@"Androids Destroyed: %04u", 0];
-    scoreLabel.position = CGPointMake(15 + scoreLabel.frame.size.width/2, self.size.height - (15 + scoreLabel.frame.size.height/2));
-    
-    [self addChild:scoreLabel];
-}
-
-- (void)didMoveToView:(SKView *)view {
     self.backgroundColor = [SKColor whiteColor];
     self.spaceship.position = CGPointMake(self.frame.size.width/2, self.spaceship.size.height);
     [self addChild:self.spaceship];
+    
+    self.scoreLabel.fontSize = 12;
+    self.scoreLabel.fontColor = [SKColor blueColor];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Androids Destroyed: %d", 0];
+    self.scoreLabel.position = CGPointMake(15 + self.scoreLabel.frame.size.width/2, self.size.height - (15 + self.scoreLabel.frame.size.height/2));
+    
+    [self addChild:self.scoreLabel];
+}
+
+- (void)didMoveToView:(SKView *)view {
+    [self setupDisplay];
     
     [self configurePhysics];
 }
@@ -105,8 +106,7 @@
 
 -(void)addToScore:(NSUInteger)points {
     self.score += points;
-    SKLabelNode *score = (SKLabelNode*)[self childNodeWithName:kScoreDisplayName];
-    score.text = [NSString stringWithFormat: @"Androids Destroyed: %04lu", (unsigned long)self.score];
+    self.scoreLabel.text = [NSString stringWithFormat: @"Androids Destroyed: %d", self.score];
 }
 
 -(void)update:(CFTimeInterval)currentTime {

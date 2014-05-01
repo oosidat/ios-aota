@@ -7,7 +7,6 @@
 //
 
 #import "SIGameScene+collision.h"
-#import "SIGameScene.h"
 
 NS_ENUM(u_int32_t, SICollisionCategory) {
     SICollisionMonsterCategory,
