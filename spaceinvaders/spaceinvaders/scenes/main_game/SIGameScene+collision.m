@@ -50,8 +50,14 @@ NS_ENUM(u_int32_t, SICollisionCategory) {
     
     if(bodyA.categoryBitMask == bodyB.contactTestBitMask && bodyB.categoryBitMask == bodyA.contactTestBitMask) {
         NSLog(@"Collision!");
-        [bodyA.node removeFromParent];
-        [bodyB.node removeFromParent];
+        if(bodyA.categoryBitMask == SICollisionMonsterCategory) {
+            [bodyA.node fadeOutWithDuration:0.1];
+            [bodyB.node removeFromParent];
+        } else {
+            [bodyA.node removeFromParent];
+            [bodyB.node fadeOutWithDuration:0.1];
+        }
+        
         
         [self addToScore:1];
     }

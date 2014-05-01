@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1257AD201911D11B000E45A9 /* SKNode+si_collision_animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1257AD1F1911D11B000E45A9 /* SKNode+si_collision_animation.m */; };
 		1673CBD118FE59A800D38AA2 /* Monster32.png in Resources */ = {isa = PBXBuildFile; fileRef = 1673CBCA18FE59A800D38AA2 /* Monster32.png */; };
 		1673CBD218FE59A800D38AA2 /* Rocket32.png in Resources */ = {isa = PBXBuildFile; fileRef = 1673CBCB18FE59A800D38AA2 /* Rocket32.png */; };
 		1673CBD318FE59A800D38AA2 /* Spaceship32.png in Resources */ = {isa = PBXBuildFile; fileRef = 1673CBCC18FE59A800D38AA2 /* Spaceship32.png */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1257AD1E1911D11B000E45A9 /* SKNode+si_collision_animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SKNode+si_collision_animation.h"; path = "framework/SKNode+si_collision_animation.h"; sourceTree = "<group>"; };
+		1257AD1F1911D11B000E45A9 /* SKNode+si_collision_animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SKNode+si_collision_animation.m"; path = "framework/SKNode+si_collision_animation.m"; sourceTree = "<group>"; };
 		1673CBCA18FE59A800D38AA2 /* Monster32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Monster32.png; sourceTree = "<group>"; };
 		1673CBCB18FE59A800D38AA2 /* Rocket32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket32.png; sourceTree = "<group>"; };
 		1673CBCC18FE59A800D38AA2 /* Spaceship32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship32.png; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				8D84F06F1901FEB800DE42C0 /* HCSpriteNode.m */,
 				8D9B302A1900CBD500658688 /* SIRandomGenerator.h */,
 				8D9B302B1900CBD500658688 /* SIRandomGenerator.m */,
+				1257AD1E1911D11B000E45A9 /* SKNode+si_collision_animation.h */,
+				1257AD1F1911D11B000E45A9 /* SKNode+si_collision_animation.m */,
 			);
 			name = framework;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				8D84F0671901A7B100DE42C0 /* SIMainMenuScene.m in Sources */,
 				16D21DB918FC8C1400D18092 /* SIAppDelegate.m in Sources */,
 				16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */,
+				1257AD201911D11B000E45A9 /* SKNode+si_collision_animation.m in Sources */,
 				8D84F06C1901A7E200DE42C0 /* SIGameScene.m in Sources */,
 				16D21DB518FC8C1400D18092 /* main.m in Sources */,
 				8D84F06D1901A7E200DE42C0 /* SIGameScene+collision.m in Sources */,
