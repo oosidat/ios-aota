@@ -8,7 +8,7 @@ Feature tracking:
 - [x] Add androids
 - [x] Add rockets
 - [x] Control spawning of androids in a better fashion
-- [x*] Implement collision with androids and rockets
+- [x] Implement collision with androids and rockets
 - [ ] Implement x-axis movement using accelerometer
 - [x*] Create start page
 - [x*] Implement scoring
