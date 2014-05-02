@@ -16,5 +16,6 @@ Feature tracking:
 - [ ] !BONUS: Add new weapon
 - [ ] !BONUS: Add variation in Android power/behaviour
 - [ ] Handle calls to the app delegate
+- [ ] Move spaceship and monster to own class
 
 *: Feature is implemented in a basic form, requires polish before first release.
