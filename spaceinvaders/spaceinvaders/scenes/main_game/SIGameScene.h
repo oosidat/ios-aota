@@ -11,8 +11,6 @@
 
 @interface SIGameScene : SKScene
 
-@property (strong, nonatomic) CMMotionManager *motionManager;
-
 -(void)addToScore:(NSUInteger)points;
 
 @end

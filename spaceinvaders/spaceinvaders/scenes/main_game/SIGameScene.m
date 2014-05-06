@@ -15,6 +15,8 @@
 
 @interface SIGameScene ()
 
+@property (nonatomic) CMMotionManager *motionManager;
+
 @property (nonatomic) SISpaceship *spaceship;
 @property (nonatomic) SKTexture *monsterTexture;
 @property (nonatomic) SKTexture *rocketTexture;
@@ -25,6 +27,7 @@
 @property (nonatomic) SKLabelNode *escapedLabel;
 @property NSUInteger score;
 @property NSUInteger escapedAndroids;
+
 @property double currentAccelX;
 
 @end
@@ -33,31 +36,20 @@
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
+        _motionManager = [[CMMotionManager alloc] init];
         _spaceship = [[SISpaceship alloc] initWithImageNamed:@"Spaceship32.png"];
         _monsterTexture = [SKTexture textureWithImageNamed:@"Monster32.png"];
         _rocketTexture = [SKTexture textureWithImageNamed:@"Rocket32.png"];
         _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
         _escapedLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
-        
-        self.motionManager = [[CMMotionManager alloc] init];
     }
     return self;
 }
 
--(void)setupMotionManager {
-    self.motionManager.accelerometerUpdateInterval = 0.1;
-    
-    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
-        if(!error) {
-            [self processAccelerationData:accelerometerData.acceleration];
-        } else {
-            NSLog(@"%@", error);
-        }
-    }];
-}
-
--(void)processAccelerationData:(CMAcceleration)acceleration {
-    self.currentAccelX = acceleration.x;
+- (void)didMoveToView:(SKView *)view {
+    [self setupDisplay];
+    [self configurePhysics];
+    [self setupMotionManager];
 }
 
 -(void)setupDisplay {
@@ -79,12 +71,50 @@
     [self addChild:self.escapedLabel];
 }
 
-- (void)didMoveToView:(SKView *)view {
-    [self setupDisplay];
+-(void)setupMotionManager {
+    self.motionManager.accelerometerUpdateInterval = 0.1;
     
-    [self configurePhysics];
+    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
+        if(!error) {
+            [self processAccelerationData:accelerometerData.acceleration];
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
+}
+
+-(void)processAccelerationData:(CMAcceleration)acceleration {
+    self.currentAccelX = acceleration.x;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    SKSpriteNode *rocket = [SKSpriteNode spriteNodeWithTexture:self.rocketTexture];
+    rocket.position = CGPointMake(self.spaceship.position.x, self.spaceship.position.y + self.spaceship.size.height/2);
     
-    [self setupMotionManager];
+    [self addChild:rocket];
+    
+    CGFloat moveDuration = self.size.width / kVelocity;
+    
+    CGPoint rocketDest = CGPointMake(rocket.position.x, kRocketRange);
+    
+    SKAction *actionMove = [SKAction moveTo:rocketDest duration:moveDuration];
+    SKAction *actionMoveDone = [SKAction removeFromParent];
+    [rocket runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
+    
+    [SIGameScene prepareCollisionForRocket:rocket];
+}
+
+-(void)update:(CFTimeInterval)currentTime {
+    /* Called before each frame is rendered */
+    NSTimeInterval timeSinceLastUpdate = currentTime - self.timeLastUpdate;
+    if(timeSinceLastUpdate > 1) {
+        timeSinceLastUpdate = 1.0/60;
+    }
+    self.timeLastUpdate = currentTime;
+    
+    [self addAndroid:timeSinceLastUpdate];
+    [self movement];
+    
 }
 
 - (void)addAndroid:(NSTimeInterval)timeSinceLastUpdate {
@@ -120,24 +150,6 @@
     [SIGameScene prepareCollisionForMonster:android];
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    //UITouch * touch = [touches anyObject];
-    SKSpriteNode *rocket = [SKSpriteNode spriteNodeWithTexture:self.rocketTexture];
-    rocket.position = CGPointMake(self.spaceship.position.x, self.spaceship.position.y + self.spaceship.size.height/2);
-    
-    [self addChild:rocket];
-    
-    CGFloat moveDuration = self.size.width / kVelocity;
-    
-    CGPoint rocketDest = CGPointMake(rocket.position.x, kRocketRange);
-    
-    SKAction *actionMove = [SKAction moveTo:rocketDest duration:moveDuration];
-    SKAction *actionMoveDone = [SKAction removeFromParent];
-    [rocket runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
-    
-    [SIGameScene prepareCollisionForRocket:rocket];
-}
-
 -(void)addToScore:(NSUInteger)points {
     self.score += points;
     self.scoreLabel.text = [NSString stringWithFormat: @"Androids Destroyed: %d", self.score];
@@ -148,25 +160,12 @@
     self.escapedLabel.text = [NSString stringWithFormat: @"Androids Escaped: %d", self.escapedAndroids];
 }
 
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
-    NSTimeInterval timeSinceLastUpdate = currentTime - self.timeLastUpdate;
-    if(timeSinceLastUpdate > 1) {
-        timeSinceLastUpdate = 1.0/60;
-    }
-    self.timeLastUpdate = currentTime;
-    
-    [self addAndroid:timeSinceLastUpdate];
-    [self movement];
-    
-}
-
 -(void)movement {
-    float maxX = self.frame.size.width - _spaceship.size.width/2;
-    float minX = _spaceship.size.width/2;
+    float maxX = self.frame.size.width - self.spaceship.size.width/2;
+    float minX = self.spaceship.size.width/2;
     
     float newX = self.currentAccelX * 20;
-    newX = MIN(MAX(newX + _spaceship.position.x, minX), maxX);
+    newX = MIN(MAX(newX + self.spaceship.position.x, minX), maxX);
     self.spaceship.position = CGPointMake(newX, self.spaceship.position.y);
 }
 
