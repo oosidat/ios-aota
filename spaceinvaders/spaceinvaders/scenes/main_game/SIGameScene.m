@@ -43,9 +43,9 @@
         self.motionManager.accelerometerUpdateInterval = 0.1;
         
         [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
-            [self processAccelerationData:accelerometerData.acceleration];
-            if(error)
-            {
+            if(!error) {
+                [self processAccelerationData:accelerometerData.acceleration];
+            } else {
                 NSLog(@"%@", error);
             }
         }];
