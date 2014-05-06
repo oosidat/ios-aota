@@ -10,7 +10,7 @@
 #import <CoreMotion/CoreMotion.h>
 
 @interface SIGameScene : SKScene<UIAccelerometerDelegate> {
-    double currentMaxAccelX;
+    
 }
 
 @property (strong, nonatomic) CMMotionManager *motionManager;
