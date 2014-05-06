@@ -43,7 +43,7 @@
         self.motionManager.accelerometerUpdateInterval = 0.1;
         
         [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
-            [self outputAccelerationData:accelerometerData.acceleration];
+            [self processAccelerationData:accelerometerData.acceleration];
             if(error)
             {
                 NSLog(@"%@", error);
@@ -54,7 +54,7 @@
     return self;
 }
 
--(void)outputAccelerationData:(CMAcceleration)acceleration {
+-(void)processAccelerationData:(CMAcceleration)acceleration {
     self.currentMaxAccelX = acceleration.x;
 }
 
