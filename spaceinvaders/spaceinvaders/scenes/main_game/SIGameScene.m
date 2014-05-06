@@ -40,18 +40,21 @@
         _escapedLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
         
         self.motionManager = [[CMMotionManager alloc] init];
-        self.motionManager.accelerometerUpdateInterval = 0.1;
-        
-        [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
-            if(!error) {
-                [self processAccelerationData:accelerometerData.acceleration];
-            } else {
-                NSLog(@"%@", error);
-            }
-        }];
-        
+        [self setupMotionManager];
     }
     return self;
+}
+
+-(void)setupMotionManager {
+    self.motionManager.accelerometerUpdateInterval = 0.1;
+    
+    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
+        if(!error) {
+            [self processAccelerationData:accelerometerData.acceleration];
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 -(void)processAccelerationData:(CMAcceleration)acceleration {
