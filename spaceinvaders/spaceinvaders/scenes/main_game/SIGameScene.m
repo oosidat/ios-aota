@@ -22,7 +22,9 @@
 @property (nonatomic) NSTimeInterval timeLastUpdate;
 
 @property (nonatomic) SKLabelNode *scoreLabel;
+@property (nonatomic) SKLabelNode *escapedLabel;
 @property NSUInteger score;
+@property NSUInteger escapedAndroids;
 
 @end
 
@@ -34,6 +36,7 @@
         _monsterTexture = [SKTexture textureWithImageNamed:@"Monster32.png"];
         _rocketTexture = [SKTexture textureWithImageNamed:@"Rocket32.png"];
         _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
+        _escapedLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
         
         self.motionManager = [[CMMotionManager alloc] init];
         self.motionManager.accelerometerUpdateInterval = 0.1;
@@ -64,7 +67,13 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"Androids Destroyed: %d", 0];
     self.scoreLabel.position = CGPointMake(15 + self.scoreLabel.frame.size.width/2, self.size.height - (15 + self.scoreLabel.frame.size.height/2));
     
+    self.escapedLabel.fontSize = 12;
+    self.escapedLabel.fontColor = [SKColor redColor];
+    self.escapedLabel.text = [NSString stringWithFormat:@"Androids Escaped: %d", 0];
+    self.escapedLabel.position = CGPointMake(self.frame.size.width - (self.escapedLabel.frame.size.width/2 + 15), self.size.height - (15 + self.escapedLabel.frame.size.height/2));
+    
     [self addChild:self.scoreLabel];
+    [self addChild:self.escapedLabel];
 }
 
 - (void)didMoveToView:(SKView *)view {
