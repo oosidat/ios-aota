@@ -25,7 +25,7 @@
 @property (nonatomic) SKLabelNode *escapedLabel;
 @property NSUInteger score;
 @property NSUInteger escapedAndroids;
-@property double currentMaxAccelX;
+@property double currentAccelX;
 
 @end
 
@@ -57,7 +57,7 @@
 }
 
 -(void)processAccelerationData:(CMAcceleration)acceleration {
-    self.currentMaxAccelX = acceleration.x;
+    self.currentAccelX = acceleration.x;
 }
 
 -(void)setupDisplay {
@@ -165,7 +165,7 @@
     float maxX = self.frame.size.width - _spaceship.size.width/2;
     float minX = _spaceship.size.width/2;
     
-    float newX = self.currentMaxAccelX * 20;
+    float newX = self.currentAccelX * 20;
     newX = MIN(MAX(newX + _spaceship.position.x, minX), maxX);
     self.spaceship.position = CGPointMake(newX, self.spaceship.position.y);
 }
