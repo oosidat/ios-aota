@@ -103,9 +103,14 @@
     
     NSTimeInterval duration = [SIRandomGenerator randomTimeIntervalFrom:1.5 to:4.5];
     
+    __weak SIGameScene *weakSelf = self;
     SKAction *actionMove = [SKAction moveTo:CGPointMake(actualX, -androidHeight) duration:duration];
     SKAction *actionMoveDone = [SKAction removeFromParent];
-    [android runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
+    SKAction *actionAddToEscapedScore = [SKAction runBlock:^{
+        SIGameScene *gameScene = weakSelf;
+        [gameScene addToEscaped:1];
+    }];
+    [android runAction:[SKAction sequence:@[actionMove, actionAddToEscapedScore, actionMoveDone]]];
     
     [SIGameScene prepareCollisionForMonster:android];
 }
