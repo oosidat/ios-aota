@@ -13,7 +13,7 @@
 #define kRocketRange 1000.0
 #define kVelocity 300.0
 
-@interface SIGameScene()
+@interface SIGameScene ()
 
 @property (nonatomic) SISpaceship *spaceship;
 @property (nonatomic) SKTexture *monsterTexture;

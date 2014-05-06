@@ -9,9 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import <CoreMotion/CoreMotion.h>
 
-@interface SIGameScene : SKScene<UIAccelerometerDelegate> {
-    
-}
+@interface SIGameScene : SKScene
 
 @property (strong, nonatomic) CMMotionManager *motionManager;
 
