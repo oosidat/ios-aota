@@ -133,10 +133,16 @@
     self.timeLastUpdate = currentTime;
     
     [self addAndroid:timeSinceLastUpdate];
+    [self movement];
     
-    /* code to move ship, refactor to separate function later */
+}
+
+-(void)movement {
+    float maxX = self.frame.size.width - _spaceship.size.width/2;
+    float minX = _spaceship.size.width/2;
     
-    float newX = _spaceship.position.x + currentMaxAccelX * 10;
+    float newX = currentMaxAccelX * 10;
+    newX = MIN(MAX(newX + _spaceship.position.x, minX), maxX);
     _spaceship.position = CGPointMake(newX, _spaceship.position.y);
 }
 
