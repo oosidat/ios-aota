@@ -89,7 +89,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     SKSpriteNode *rocket = [SKSpriteNode spriteNodeWithTexture:self.rocketTexture];
-    rocket.position = CGPointMake(self.spaceship.position.x, self.spaceship.position.y + self.spaceship.size.height/2);
+    rocket.position = CGPointMake(self.spaceship.position.x, self.spaceship.position.y + self.spaceship.size.height);
     
     [self addChild:rocket];
     
