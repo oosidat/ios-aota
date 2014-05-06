@@ -163,7 +163,7 @@
     
     float newX = self.currentMaxAccelX * 20;
     newX = MIN(MAX(newX + _spaceship.position.x, minX), maxX);
-    self.spaceship.position = CGPointMake(newX, _spaceship.position.y);
+    self.spaceship.position = CGPointMake(newX, self.spaceship.position.y);
 }
 
 @end
