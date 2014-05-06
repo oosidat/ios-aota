@@ -9,13 +9,14 @@ Feature tracking:
 - [x] Add rockets
 - [x] Control spawning of androids in a better fashion
 - [x] Implement collision with androids and rockets
-- [ ] Implement x-axis movement using accelerometer
-- [x*] Create start page
+- [x] Implement x-axis movement using accelerometer
+- [x] Create start page*
 - [x] Implement scoring
 - [ ] Implement Game Over scenario and screen
 - [ ] !BONUS: Add new weapon
 - [ ] !BONUS: Add variation in Android power/behaviour
 - [ ] Handle calls to the app delegate
 - [ ] Move spaceship and monster to own class
+- [x] Create App Icon
 
 *: Feature is implemented in a basic form, requires polish before first release.
