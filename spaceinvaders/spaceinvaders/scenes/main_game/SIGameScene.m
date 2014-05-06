@@ -92,7 +92,7 @@
     android.position = CGPointMake(actualX, self.frame.size.height);
     [self addChild:android];
     
-    NSTimeInterval duration = [SIRandomGenerator randomTimeIntervalFrom:0.5 to:3.0];
+    NSTimeInterval duration = [SIRandomGenerator randomTimeIntervalFrom:1.5 to:4.5];
     
     SKAction *actionMove = [SKAction moveTo:CGPointMake(actualX, -androidHeight) duration:duration];
     SKAction *actionMoveDone = [SKAction removeFromParent];
