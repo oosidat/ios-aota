@@ -133,6 +133,11 @@
     self.scoreLabel.text = [NSString stringWithFormat: @"Androids Destroyed: %d", self.score];
 }
 
+-(void)addToEscaped:(NSUInteger)badpoints {
+    self.escapedAndroids += badpoints;
+    self.escapedLabel.text = [NSString stringWithFormat: @"Androids Escaped: %d", self.escapedAndroids];
+}
+
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     NSTimeInterval timeSinceLastUpdate = currentTime - self.timeLastUpdate;
