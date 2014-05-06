@@ -40,7 +40,6 @@
         _escapedLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
         
         self.motionManager = [[CMMotionManager alloc] init];
-        [self setupMotionManager];
     }
     return self;
 }
@@ -84,6 +83,8 @@
     [self setupDisplay];
     
     [self configurePhysics];
+    
+    [self setupMotionManager];
 }
 
 - (void)addAndroid:(NSTimeInterval)timeSinceLastUpdate {
