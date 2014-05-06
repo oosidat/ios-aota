@@ -34,8 +34,24 @@
         _monsterTexture = [SKTexture textureWithImageNamed:@"Monster32.png"];
         _rocketTexture = [SKTexture textureWithImageNamed:@"Rocket32.png"];
         _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
+        
+        self.motionManager = [[CMMotionManager alloc] init];
+        self.motionManager.accelerometerUpdateInterval = 0.1;
+        
+        [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
+            [self outputAccelerationData:accelerometerData.acceleration];
+            if(error)
+            {
+                NSLog(@"%@", error);
+            }
+        }];
+        
     }
     return self;
+}
+
+-(void)outputAccelerationData:(CMAcceleration)acceleration {
+    currentMaxAccelX = acceleration.x;
 }
 
 -(void)setupDisplay {
@@ -117,6 +133,11 @@
     self.timeLastUpdate = currentTime;
     
     [self addAndroid:timeSinceLastUpdate];
+    
+    /* code to move ship, refactor to separate function later */
+    
+    float newX = _spaceship.position.x + currentMaxAccelX * 10;
+    _spaceship.position = CGPointMake(newX, _spaceship.position.y);
 }
 
 @end
