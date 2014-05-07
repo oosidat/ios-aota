@@ -25,8 +25,12 @@
 
 @property (nonatomic) SKLabelNode *scoreLabel;
 @property (nonatomic) SKLabelNode *escapedLabel;
+@property (nonatomic) SKLabelNode *countDownLabel;
 @property NSUInteger score;
 @property NSUInteger escapedAndroids;
+@property NSUInteger waitingTime;
+@property NSTimeInterval startTime;
+@property BOOL startGameplay;
 
 @property double currentAccelX;
 
@@ -42,6 +46,9 @@
         _rocketTexture = [SKTexture textureWithImageNamed:@"Rocket32.png"];
         _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
         _escapedLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
+        _waitingTime = 5;
+        _countDownLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
+        _startGameplay = NO;
     }
     return self;
 }
@@ -50,6 +57,26 @@
     [self setupDisplay];
     [self configurePhysics];
     [self setupMotionManager];
+    [self beginCountDown];
+}
+
+- (void)beginCountDown {
+    __weak SIGameScene *weakSelf = self;
+    SKAction *delay = [SKAction waitForDuration:1];
+    SKAction *countdown = [SKAction runBlock:^{
+        SIGameScene *gameScene = weakSelf;
+        gameScene.countDownLabel.text = [NSString stringWithFormat:@"%d", gameScene.waitingTime];
+        gameScene.waitingTime--;
+    }];
+    SKAction *countDownSequence = [SKAction sequence:@[countdown, delay]];
+    SKAction *repeat = [SKAction repeatAction:countDownSequence count:self.waitingTime];
+    
+    SKAction *complete = [SKAction runBlock:^{
+        SIGameScene *gameScene = weakSelf;
+        gameScene.startGameplay = YES;
+        gameScene.countDownLabel.hidden = YES;
+    }];
+    [self.countDownLabel runAction:[SKAction sequence:@[repeat, complete]]];
 }
 
 -(void)setupDisplay {
@@ -67,8 +94,16 @@
     self.escapedLabel.text = [NSString stringWithFormat:@"Androids Escaped: %d", 0];
     self.escapedLabel.position = CGPointMake(self.frame.size.width - (self.escapedLabel.frame.size.width/2 + 15), self.size.height - (15 + self.escapedLabel.frame.size.height/2));
     
+    self.countDownLabel.fontSize = 24;
+    self.countDownLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame)*0.75);
+    self.countDownLabel.fontColor = [SKColor blueColor ];
+    self.countDownLabel.name = @"countDown";
+    self.countDownLabel.zPosition = 100;
+
+    
     [self addChild:self.scoreLabel];
     [self addChild:self.escapedLabel];
+    [self addChild:self.countDownLabel];
 }
 
 -(void)setupMotionManager {
@@ -106,15 +141,18 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    NSTimeInterval timeSinceLastUpdate = currentTime - self.timeLastUpdate;
-    if(timeSinceLastUpdate > 1) {
-        timeSinceLastUpdate = 1.0/60;
+    
+    if (self.startGameplay){
+        self.startTime = currentTime;
+        NSTimeInterval timeSinceLastUpdate = currentTime - self.timeLastUpdate;
+        if(timeSinceLastUpdate > 1) {
+            timeSinceLastUpdate = 1.0/60;
+        }
+        self.timeLastUpdate = currentTime;
+        
+        [self addAndroid:timeSinceLastUpdate];
+        [self movement];
     }
-    self.timeLastUpdate = currentTime;
-    
-    [self addAndroid:timeSinceLastUpdate];
-    [self movement];
-    
 }
 
 - (void)addAndroid:(NSTimeInterval)timeSinceLastUpdate {
