@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1257AD201911D11B000E45A9 /* SKNode+si_collision_animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1257AD1F1911D11B000E45A9 /* SKNode+si_collision_animation.m */; };
+		12683418191AAD6100007207 /* SIScoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12683417191AAD6100007207 /* SIScoreManager.m */; };
 		1673CBD118FE59A800D38AA2 /* Monster32.png in Resources */ = {isa = PBXBuildFile; fileRef = 1673CBCA18FE59A800D38AA2 /* Monster32.png */; };
 		1673CBD218FE59A800D38AA2 /* Rocket32.png in Resources */ = {isa = PBXBuildFile; fileRef = 1673CBCB18FE59A800D38AA2 /* Rocket32.png */; };
 		1673CBD318FE59A800D38AA2 /* Spaceship32.png in Resources */ = {isa = PBXBuildFile; fileRef = 1673CBCC18FE59A800D38AA2 /* Spaceship32.png */; };
@@ -49,6 +50,8 @@
 /* Begin PBXFileReference section */
 		1257AD1E1911D11B000E45A9 /* SKNode+si_collision_animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SKNode+si_collision_animation.h"; path = "framework/SKNode+si_collision_animation.h"; sourceTree = "<group>"; };
 		1257AD1F1911D11B000E45A9 /* SKNode+si_collision_animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SKNode+si_collision_animation.m"; path = "framework/SKNode+si_collision_animation.m"; sourceTree = "<group>"; };
+		12683416191AAD6100007207 /* SIScoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIScoreManager.h; path = data/SIScoreManager.h; sourceTree = "<group>"; };
+		12683417191AAD6100007207 /* SIScoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIScoreManager.m; path = data/SIScoreManager.m; sourceTree = "<group>"; };
 		1673CBCA18FE59A800D38AA2 /* Monster32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Monster32.png; sourceTree = "<group>"; };
 		1673CBCB18FE59A800D38AA2 /* Rocket32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket32.png; sourceTree = "<group>"; };
 		1673CBCC18FE59A800D38AA2 /* Spaceship32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship32.png; sourceTree = "<group>"; };
@@ -112,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12683415191AAD3400007207 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				12683416191AAD6100007207 /* SIScoreManager.h */,
+				12683417191AAD6100007207 /* SIScoreManager.m */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
 		1673CBC918FE59A800D38AA2 /* small */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +179,7 @@
 		16D21DAE18FC8C1400D18092 /* spaceinvaders */ = {
 			isa = PBXGroup;
 			children = (
+				12683415191AAD3400007207 /* data */,
 				8D84F0621901A74000DE42C0 /* scenes */,
 				8D9B30291900CB7200658688 /* framework */,
 				16D21DB718FC8C1400D18092 /* SIAppDelegate.h */,
@@ -356,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12683418191AAD6100007207 /* SIScoreManager.m in Sources */,
 				16D21DB918FC8C1400D18092 /* SIAppDelegate.m in Sources */,
 				16D21DBF18FC8C1400D18092 /* SIViewController.m in Sources */,
 				1257AD201911D11B000E45A9 /* SKNode+si_collision_animation.m in Sources */,
