@@ -25,8 +25,12 @@
 
 @property (nonatomic) SKLabelNode *scoreLabel;
 @property (nonatomic) SKLabelNode *escapedLabel;
+@property (nonatomic) SKLabelNode *countDownLabel;
 @property NSUInteger score;
 @property NSUInteger escapedAndroids;
+@property NSUInteger waitingTime;
+@property NSTimeInterval startTime;
+@property BOOL startGameplay;
 
 @property double currentAccelX;
 
@@ -42,6 +46,9 @@
         _rocketTexture = [SKTexture textureWithImageNamed:@"Rocket32.png"];
         _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
         _escapedLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
+        _waitingTime = 5;
+        _countDownLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
+        _startGameplay = YES;
     }
     return self;
 }
@@ -67,8 +74,16 @@
     self.escapedLabel.text = [NSString stringWithFormat:@"Androids Escaped: %d", 0];
     self.escapedLabel.position = CGPointMake(self.frame.size.width - (self.escapedLabel.frame.size.width/2 + 15), self.size.height - (15 + self.escapedLabel.frame.size.height/2));
     
+    self.countDownLabel.fontSize = 24;
+    self.countDownLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame)*0.75);
+    self.countDownLabel.fontColor = [SKColor blueColor ];
+    self.countDownLabel.name = @"countDown";
+    self.countDownLabel.zPosition = 100;
+
+    
     [self addChild:self.scoreLabel];
     [self addChild:self.escapedLabel];
+    [self addChild:self.countDownLabel];
 }
 
 -(void)setupMotionManager {
@@ -106,15 +121,27 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    NSTimeInterval timeSinceLastUpdate = currentTime - self.timeLastUpdate;
-    if(timeSinceLastUpdate > 1) {
-        timeSinceLastUpdate = 1.0/60;
+    
+    if (self.startGameplay){
+        self.startTime = currentTime;
+        self.startGameplay = NO;
     }
-    self.timeLastUpdate = currentTime;
     
-    [self addAndroid:timeSinceLastUpdate];
-    [self movement];
-    
+    int countDownInt = self.waitingTime - (int)(currentTime-self.startTime);
+    if(countDownInt > 0) {  //if counting down to 0 show counter
+        self.countDownLabel.text = [NSString stringWithFormat:@"%i", countDownInt];
+    } else {
+        self.countDownLabel.hidden = YES;
+        NSTimeInterval timeSinceLastUpdate = currentTime - self.timeLastUpdate;
+        if(timeSinceLastUpdate > 1) {
+            timeSinceLastUpdate = 1.0/60;
+        }
+        self.timeLastUpdate = currentTime;
+        
+        [self addAndroid:timeSinceLastUpdate];
+        [self movement];
+
+    }
 }
 
 - (void)addAndroid:(NSTimeInterval)timeSinceLastUpdate {
