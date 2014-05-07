@@ -66,7 +66,7 @@
     SKAction *delay = [SKAction waitForDuration:1];
     SKAction *countdown = [SKAction runBlock:^{
         SIGameScene *gameScene = weakSelf;
-        gameScene.countDownLabel.text = [NSString stringWithFormat:@"%d", self.waitingTime];
+        gameScene.countDownLabel.text = [NSString stringWithFormat:@"%d", gameScene.waitingTime];
         gameScene.waitingTime--;
     }];
     SKAction *countDownSequence = [SKAction sequence:@[countdown, delay]];
