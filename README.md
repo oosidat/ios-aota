@@ -18,5 +18,6 @@ Feature tracking:
 - [ ] Handle calls to the app delegate
 - [ ] Move spaceship and monster to own class
 - [x] Create App Icon
+- [ ] Add timer when game starts
 
 *: Feature is implemented in a basic form, requires polish before first release.
