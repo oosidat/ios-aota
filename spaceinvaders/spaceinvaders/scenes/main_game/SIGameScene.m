@@ -48,7 +48,7 @@
         _escapedLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
         _waitingTime = 5;
         _countDownLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
-        _startGameplay = YES;
+        _startGameplay = NO;
     }
     return self;
 }
@@ -57,6 +57,27 @@
     [self setupDisplay];
     [self configurePhysics];
     [self setupMotionManager];
+    
+    [self beginCountDown];
+}
+
+- (void)beginCountDown {
+    __weak SIGameScene *weakSelf = self;
+    SKAction *delay = [SKAction waitForDuration:1];
+    SKAction *countdown = [SKAction runBlock:^{
+        SIGameScene *gameScene = weakSelf;
+        gameScene.countDownLabel.text = [NSString stringWithFormat:@"%d", self.waitingTime];
+        gameScene.waitingTime--;
+    }];
+    SKAction *countDownSequence = [SKAction sequence:@[countdown, delay]];
+    SKAction *repeat = [SKAction repeatAction:countDownSequence count:self.waitingTime];
+    
+    SKAction *complete = [SKAction runBlock:^{
+        SIGameScene *gameScene = weakSelf;
+        gameScene.startGameplay = YES;
+        gameScene.countDownLabel.hidden = YES;
+    }];
+    [self.countDownLabel runAction:[SKAction sequence:@[repeat, complete]]];
 }
 
 -(void)setupDisplay {
@@ -124,14 +145,6 @@
     
     if (self.startGameplay){
         self.startTime = currentTime;
-        self.startGameplay = NO;
-    }
-    
-    int countDownInt = self.waitingTime - (int)(currentTime-self.startTime);
-    if(countDownInt > 0) {  //if counting down to 0 show counter
-        self.countDownLabel.text = [NSString stringWithFormat:@"%i", countDownInt];
-    } else {
-        self.countDownLabel.hidden = YES;
         NSTimeInterval timeSinceLastUpdate = currentTime - self.timeLastUpdate;
         if(timeSinceLastUpdate > 1) {
             timeSinceLastUpdate = 1.0/60;
@@ -140,7 +153,6 @@
         
         [self addAndroid:timeSinceLastUpdate];
         [self movement];
-
     }
 }
 
