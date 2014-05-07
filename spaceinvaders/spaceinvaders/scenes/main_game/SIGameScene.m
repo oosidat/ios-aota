@@ -57,7 +57,6 @@
     [self setupDisplay];
     [self configurePhysics];
     [self setupMotionManager];
-    
     [self beginCountDown];
 }
 
