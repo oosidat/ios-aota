@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jhd-fL-c1y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3h2-jH-Ar7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -27,7 +27,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LVB-YS-i5n" kind="modal" id="HFD-q9-vfb"/>
+                                    <segue destination="LVB-YS-i5n" kind="push" id="HFD-q9-vfb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Attack of the Androids!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ji-wK-z7u">
@@ -45,7 +45,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToO-Sf-dGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="83"/>
+            <point key="canvasLocation" x="842" y="89"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZSB-2o-axZ">
+            <objects>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="3h2-jH-Ar7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SLD-OE-00j">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jhd-fL-c1y" kind="relationship" relationship="rootViewController" id="WZq-vc-c3b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lB9-uI-3CG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="399" y="83"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CtS-rA-C9T">
@@ -61,10 +76,46 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="EP4-22-Ss7"/>
+                    <connections>
+                        <segue destination="BW2-Di-YYF" kind="push" identifier="gameOverSegue" id="Hdg-oa-xAq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1269" y="83"/>
+        </scene>
+        <!--Game OverVC-->
+        <scene sceneID="1eX-QM-AzN">
+            <objects>
+                <viewController id="BW2-Di-YYF" customClass="SIGameOverVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="boX-Eo-9xf"/>
+                        <viewControllerLayoutGuide type="bottom" id="gka-Z7-wLh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eZ1-x6-Ctd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwh-J2-hJE">
+                                <rect key="frame" x="92" y="408" width="136" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.098039224743843079" green="0.58039218187332153" blue="0.9803922176361084" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Play Again!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgainAction:" destination="BW2-Di-YYF" eventType="touchUpInside" id="jOn-f3-ZLO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XB4-qx-R4c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gbT-Tx-buy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679" y="77"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

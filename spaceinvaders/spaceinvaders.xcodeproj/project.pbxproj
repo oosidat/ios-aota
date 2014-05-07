@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1257AD201911D11B000E45A9 /* SKNode+si_collision_animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1257AD1F1911D11B000E45A9 /* SKNode+si_collision_animation.m */; };
 		12683418191AAD6100007207 /* SIScoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12683417191AAD6100007207 /* SIScoreManager.m */; };
+		12EA10EC191AC69F0060A14D /* SIGameOverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EA10EB191AC69F0060A14D /* SIGameOverVC.m */; };
 		1673CBD118FE59A800D38AA2 /* Monster32.png in Resources */ = {isa = PBXBuildFile; fileRef = 1673CBCA18FE59A800D38AA2 /* Monster32.png */; };
 		1673CBD218FE59A800D38AA2 /* Rocket32.png in Resources */ = {isa = PBXBuildFile; fileRef = 1673CBCB18FE59A800D38AA2 /* Rocket32.png */; };
 		1673CBD318FE59A800D38AA2 /* Spaceship32.png in Resources */ = {isa = PBXBuildFile; fileRef = 1673CBCC18FE59A800D38AA2 /* Spaceship32.png */; };
@@ -52,6 +53,8 @@
 		1257AD1F1911D11B000E45A9 /* SKNode+si_collision_animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SKNode+si_collision_animation.m"; path = "framework/SKNode+si_collision_animation.m"; sourceTree = "<group>"; };
 		12683416191AAD6100007207 /* SIScoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIScoreManager.h; path = data/SIScoreManager.h; sourceTree = "<group>"; };
 		12683417191AAD6100007207 /* SIScoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIScoreManager.m; path = data/SIScoreManager.m; sourceTree = "<group>"; };
+		12EA10EA191AC69F0060A14D /* SIGameOverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGameOverVC.h; sourceTree = "<group>"; };
+		12EA10EB191AC69F0060A14D /* SIGameOverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGameOverVC.m; sourceTree = "<group>"; };
 		1673CBCA18FE59A800D38AA2 /* Monster32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Monster32.png; sourceTree = "<group>"; };
 		1673CBCB18FE59A800D38AA2 /* Rocket32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket32.png; sourceTree = "<group>"; };
 		1673CBCC18FE59A800D38AA2 /* Spaceship32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship32.png; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				16D21DAF18FC8C1400D18092 /* Supporting Files */,
 				16D21DE218FC902600D18092 /* SISpaceship.h */,
 				16D21DE318FC902600D18092 /* SISpaceship.m */,
+				12EA10EA191AC69F0060A14D /* SIGameOverVC.h */,
+				12EA10EB191AC69F0060A14D /* SIGameOverVC.m */,
 			);
 			path = spaceinvaders;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				8D84F06D1901A7E200DE42C0 /* SIGameScene+collision.m in Sources */,
 				8D9B302C1900CBD500658688 /* SIRandomGenerator.m in Sources */,
 				16D21DE418FC902600D18092 /* SISpaceship.m in Sources */,
+				12EA10EC191AC69F0060A14D /* SIGameOverVC.m in Sources */,
 				8D84F0701901FEB800DE42C0 /* HCSpriteNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

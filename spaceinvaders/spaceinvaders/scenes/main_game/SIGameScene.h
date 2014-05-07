@@ -11,6 +11,9 @@
 
 @interface SIGameScene : SKScene
 
+//TODO: I don't like this
+@property (nonatomic, weak) UIViewController *viewController;
+
 -(void)addToScore:(NSUInteger)points;
 
 @end

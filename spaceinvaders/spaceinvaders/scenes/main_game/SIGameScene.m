@@ -196,6 +196,15 @@
 -(void)addToEscaped:(NSUInteger)badpoints {
     self.escapedAndroids += badpoints;
     self.escapedLabel.text = [NSString stringWithFormat: @"Androids Escaped: %d", self.escapedAndroids];
+    if(self.escapedAndroids >= 3) {
+        [self gameOver];
+    }
+}
+
+-(void)gameOver {
+    self.startGameplay = NO;
+    self.paused = YES;
+    [self.viewController performSegueWithIdentifier:@"gameOverSegue" sender:nil];
 }
 
 -(void)movement {

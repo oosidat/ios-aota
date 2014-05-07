@@ -14,13 +14,14 @@
 - (void)viewDidLayoutSubviews
 {
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
+    SKView *skView = (SKView *)self.view;
     if (skView) {
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
         
-        SKScene * scene = [SIGameScene sceneWithSize:CGSizeMake(320, 480)];
+        SIGameScene *scene = [SIGameScene sceneWithSize:CGSizeMake(320, 480)];
         scene.scaleMode = SKSceneScaleModeAspectFit;
+        scene.viewController = self;
 
         [skView presentScene:scene];
     }
