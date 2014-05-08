@@ -7,11 +7,23 @@
 //
 
 #import "SIGameOverVC.h"
+#import "SIScoreManager.h"
+
+@interface SIGameOverVC()
+@property (nonatomic, retain) IBOutlet UILabel *currentScoreLabel;
+@property (nonatomic, retain) IBOutlet UILabel *highScoreLabel;
+@end
 
 @implementation SIGameOverVC
 
 - (IBAction)playAgainAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)viewDidLoad {
+    SIScoreManager *scoreManager = [SIScoreManager sharedManager];
+    self.currentScoreLabel.text = [NSString stringWithFormat:@"%d", scoreManager.mostRecentScore];
+    self.highScoreLabel.text = [NSString stringWithFormat:@"%d", scoreManager.highscore];
 }
 
 @end
