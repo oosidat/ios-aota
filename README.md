@@ -12,7 +12,7 @@ Feature tracking:
 - [x] Implement x-axis movement using accelerometer
 - [x] Create start page*
 - [x] Implement scoring
-- [ ] Implement Game Over scenario and screen
+- [x] Implement Game Over scenario and screen
 - [ ] !BONUS: Add new weapon
 - [ ] !BONUS: Add variation in Android power/behaviour
 - [ ] !BONUS: Add better animation on collision
