@@ -9,6 +9,7 @@
 #import "SIGameScene.h"
 #import "SISpaceship.h"
 #import "SIGameScene+collision.h"
+#import "SIScoreManager.h"
 
 #define kRocketRange 1000.0
 #define kVelocity 300.0
@@ -202,6 +203,10 @@
 }
 
 -(void)gameOver {
+    SIScoreManager *scoreManager = [SIScoreManager sharedManager];
+    [scoreManager addScoreToLeaderboard:self.score];
+    NSLog(@"Most Recent Score: %d", scoreManager.mostRecentScore);
+    NSLog(@"High Score: %d", scoreManager.highscore);
     self.startGameplay = NO;
     self.paused = YES;
     [self.viewController performSegueWithIdentifier:@"gameOverSegue" sender:nil];
