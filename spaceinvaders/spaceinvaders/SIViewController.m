@@ -19,7 +19,7 @@
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
         
-        SIGameScene *scene = [SIGameScene sceneWithSize:CGSizeMake(320, 480)];
+        SIGameScene *scene = [SIGameScene sceneWithSize:CGSizeMake(640, 1136)];
         scene.scaleMode = SKSceneScaleModeAspectFit;
         scene.viewController = self;
 

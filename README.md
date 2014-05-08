@@ -21,5 +21,6 @@ Feature tracking:
 - [x] Create App Icon
 - [x] Add timer when game start
 - [ ] Add pause screen
+- [ ] Account for screen resolutions
 
 *: Feature is implemented in a basic form, requires polish before first release.
