@@ -15,6 +15,7 @@
 
 @property (nonatomic) NSUInteger mostRecentScore;
 @property (nonatomic) NSMutableArray *scores;
+@property (nonatomic) BOOL dirty;
 
 @end
 
@@ -65,9 +66,11 @@
     [self insertScore:score intoSortedArray:self.scores];
     self.mostRecentScore = score;
     
-    NSString *path = [SIScoreManager pathForFile];
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.scores];
-    [data writeToFile:path atomically:YES];
+    if(self.dirty) {
+        NSString *path = [SIScoreManager pathForFile];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.scores];
+        [data writeToFile:path atomically:YES];
+    }
 }
 
 - (void)insertScore:(NSUInteger)score intoSortedArray:(NSMutableArray *)array {
@@ -83,8 +86,12 @@
     if(indexToInsert >= kMaximumNumberOfScores) {
         return;
     }
+    
     [array insertObject:[NSNumber numberWithUnsignedInteger:score] atIndex:indexToInsert];
-    [array removeLastObject];
+    if([array count] >= kMaximumNumberOfScores) {
+        [array removeLastObject];
+    }
+    self.dirty = YES;
 }
 
 @end
