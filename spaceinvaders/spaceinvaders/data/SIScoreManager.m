@@ -70,6 +70,7 @@
         NSString *path = [SIScoreManager pathForFile];
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.scores];
         [data writeToFile:path atomically:YES];
+        self.dirty = NO;
     }
 }
 
