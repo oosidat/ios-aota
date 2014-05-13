@@ -20,8 +20,7 @@
 
 @implementation SIViewController
 
-- (void)viewDidLayoutSubviews
-{
+- (void)viewDidLayoutSubviews {
     // Configure the view.
     SKView *skView = (SKView *)self.view;
     if (skView) {
@@ -35,16 +34,15 @@
         self.gameScene = scene;
 
         [skView presentScene:scene];
+        [self registerNotifications];
     }
 }
 
-- (BOOL)shouldAutorotate
-{
+- (BOOL)shouldAutorotate {
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
-{
+- (NSUInteger)supportedInterfaceOrientations {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return UIInterfaceOrientationMaskAllButUpsideDown;
     } else {
@@ -59,6 +57,20 @@
         [self.gameScene pause];
     }
     self.paused = !self.isPaused;
+}
+
+#pragma mark UIApplication Notification
+
+- (void)registerNotifications {
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(didEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+}
+
+- (void)didEnterBackground:(NSNotification *)obj {
+    if(!self.isPaused) {
+        [self.gameScene pause];
+        self.paused = YES;
+    }
 }
 
 @end
