@@ -20,7 +20,7 @@ Feature tracking:
 - [ ] Move spaceship and monster to own class
 - [x] Create App Icon
 - [x] Add timer when game start (3 - 5 sec)
-- [ ] Add pause screen
+- [X] Add pause screen
 - [ ] Account for screen resolutions
 
 *: Feature is implemented in a basic form, requires polish before first release.
