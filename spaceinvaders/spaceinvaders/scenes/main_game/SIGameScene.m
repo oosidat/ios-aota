@@ -31,9 +31,12 @@
 @property NSUInteger escapedAndroids;
 @property NSUInteger waitingTime;
 @property NSTimeInterval startTime;
-@property BOOL startGameplay;
+@property (getter = isGameStarted) BOOL gameStarted;
 
 @property double currentAccelX;
+
+@property (nonatomic) SKLabelNode *pauseLabel;
+@property (nonatomic, getter = isGamePaused) BOOL gamePaused;
 
 @end
 
@@ -49,7 +52,8 @@
         _escapedLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
         _waitingTime = 3;
         _countDownLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
-        _startGameplay = NO;
+        _gameStarted = NO;
+        _pauseLabel = [SKLabelNode labelNodeWithFontNamed:@"AppleSDGothicNeo-Thin"];
     }
     return self;
 }
@@ -74,7 +78,7 @@
     
     SKAction *complete = [SKAction runBlock:^{
         SIGameScene *gameScene = weakSelf;
-        gameScene.startGameplay = YES;
+        gameScene.gameStarted = YES;
         gameScene.countDownLabel.hidden = YES;
     }];
     [self.countDownLabel runAction:[SKAction sequence:@[repeat, complete]]];
@@ -101,6 +105,11 @@
     self.countDownLabel.name = @"countDown";
     self.countDownLabel.zPosition = 100;
 
+    self.pauseLabel.text = @"Paused";
+    self.pauseLabel.fontSize = 36;
+    self.pauseLabel.fontColor = [SKColor blackColor];
+    self.pauseLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+    self.pauseLabel.zPosition = 100;
     
     [self addChild:self.scoreLabel];
     [self addChild:self.escapedLabel];
@@ -143,7 +152,7 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     
-    if (self.startGameplay){
+    if (self.isGameStarted && !self.isGamePaused) {
         self.startTime = currentTime;
         NSTimeInterval timeSinceLastUpdate = currentTime - self.timeLastUpdate;
         if(timeSinceLastUpdate > 1) {
@@ -202,12 +211,26 @@
     }
 }
 
+- (void)pause {
+    self.paused = true;
+    self.gamePaused = true;
+    
+    [self addChild:self.pauseLabel];
+}
+
+- (void)resume {
+    self.paused = false;
+    self.gamePaused = false;
+    
+    [self.pauseLabel removeFromParent];
+}
+
 -(void)gameOver {
     SIScoreManager *scoreManager = [SIScoreManager sharedManager];
     [scoreManager addScoreToLeaderboard:self.score];
     NSLog(@"Most Recent Score: %d", scoreManager.mostRecentScore);
     NSLog(@"High Score: %d", scoreManager.highscore);
-    self.startGameplay = NO;
+    self.gameStarted = NO;
     self.paused = YES;
     [self.viewController performSegueWithIdentifier:@"gameOverSegue" sender:nil];
 }

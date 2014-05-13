@@ -9,6 +9,15 @@
 #import "SIViewController.h"
 #import "SIGameScene.h"
 
+@interface SIViewController()
+
+@property (nonatomic, getter = isPaused) BOOL paused;
+@property (nonatomic, weak) SIGameScene *gameScene;
+
+- (IBAction)pauseButtonAction:(id)sender;
+
+@end
+
 @implementation SIViewController
 
 - (void)viewDidLayoutSubviews
@@ -19,9 +28,11 @@
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
         
-        SIGameScene *scene = [SIGameScene sceneWithSize:CGSizeMake(640, 1136)];
+        SIGameScene *scene = [SIGameScene sceneWithSize:CGSizeMake(320, 480)];
         scene.scaleMode = SKSceneScaleModeAspectFit;
         scene.viewController = self;
+        
+        self.gameScene = scene;
 
         [skView presentScene:scene];
     }
@@ -41,10 +52,13 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+- (IBAction)pauseButtonAction:(id)sender {
+    if(self.isPaused) {
+        [self.gameScene resume];
+    } else {
+        [self.gameScene pause];
+    }
+    self.paused = !self.isPaused;
 }
 
 @end

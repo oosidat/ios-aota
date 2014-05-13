@@ -13,7 +13,10 @@
 
 //TODO: I don't like this
 @property (nonatomic, weak) UIViewController *viewController;
+@property (nonatomic, readonly, getter = isGameStarted) BOOL gameStarted;
 
--(void)addToScore:(NSUInteger)points;
+- (void)addToScore:(NSUInteger)points;
+- (void)pause;
+- (void)resume;
 
 @end
