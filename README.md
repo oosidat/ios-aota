@@ -16,7 +16,7 @@ Feature tracking:
 - [ ] !BONUS: Add new weapon
 - [ ] !BONUS: Add variation in Android power/behaviour
 - [ ] !BONUS: Add better animation on collision
-- [ ] Handle calls to the app delegate
+- [X] Handle calls to the app delegate
 - [ ] Move spaceship and monster to own class
 - [x] Create App Icon
 - [x] Add timer when game start (3 - 5 sec)
