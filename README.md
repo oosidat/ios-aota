@@ -1,5 +1,14 @@
-Attack of the Androids - A Space Invaders Style Game for iOS
-============================================================
+Attack of the Androids
+======================
+
+You're in charge of a spaceship! Defend against oncoming Androids - do not let them pass!
+
+How to play
+-----------
+
+* Tap to fire rockets at your enemies
+* Move your phone (left-to-right, vice versa) to move your spaceship to ensure that the Androids are in your line of fire
+* If three Androids get through, it's Game Over!
 
 Feature tracking:
 ----------------
