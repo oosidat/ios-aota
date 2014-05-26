@@ -232,7 +232,14 @@
     NSLog(@"High Score: %d", scoreManager.highscore);
     self.gameStarted = NO;
     self.paused = YES;
-    [self.viewController performSegueWithIdentifier:@"gameOverSegue" sender:nil];
+    self.pauseLabel.text = @"Game Over";
+    [self addChild:self.pauseLabel];
+    
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self.viewController performSegueWithIdentifier:@"gameOverSegue" sender:nil];
+    });
 }
 
 -(void)movement {
